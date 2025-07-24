@@ -40,24 +40,24 @@ const featuredProjects = [
 
 export default function FeaturedProjects() {
     return (
-        <section className="section-lg bg-gradient-to-br from-slate-900 via-slate-950 to-violet-900">
-            <div className="container-wide">
+        <section className="bg-gradient-to-br from-slate-900 via-slate-950 to-violet-900">
+            <div className="container-wide px-4 py-16 lg:py-24">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 lg:mb-16"
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6"
                     >
                         Featured Projects
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
-                        className="text-xl text-white/80 max-w-2xl mx-auto"
+                        className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
                     >
                         Showcasing impactful projects that highlight my expertise as a frontend developer UK and AI integration specialist.
                     </motion.p>
@@ -68,7 +68,7 @@ export default function FeaturedProjects() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
                 >
                     {featuredProjects.map((project, index) => (
                         <motion.div
@@ -77,7 +77,7 @@ export default function FeaturedProjects() {
                             className="card overflow-hidden hover:shadow-xl transition-all duration-300"
                         >
                             {/* Project Image */}
-                            <div className="relative h-64 overflow-hidden">
+                            <div className="relative h-48 sm:h-64 overflow-hidden">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
@@ -88,16 +88,16 @@ export default function FeaturedProjects() {
                             </div>
 
                             {/* Project Content */}
-                            <div className="p-8">
-                                <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-                                <p className="text-white/80 mb-6 leading-relaxed">{project.description}</p>
+                            <div className="p-6 lg:p-8">
+                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 lg:mb-4">{project.title}</h3>
+                                <p className="text-white/80 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">{project.description}</p>
 
                                 {/* Technology Tags */}
-                                <div className="flex flex-wrap gap-2 mb-6">
+                                <div className="flex flex-wrap gap-2 mb-4 lg:mb-6">
                                     {project.tags.map((tag, tagIndex) => (
                                         <span
                                             key={tagIndex}
-                                            className="px-3 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-full border border-violet-500/30"
+                                            className="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-full border border-violet-500/30"
                                         >
                                             {tag}
                                         </span>
@@ -127,7 +127,7 @@ export default function FeaturedProjects() {
                 {/* View All Projects Button */}
                 <motion.div
                     variants={itemVariants}
-                    className="text-center mt-12"
+                    className="text-center mt-8 lg:mt-12"
                 >
                     <Link
                         href="/portfolio"

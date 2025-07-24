@@ -79,24 +79,24 @@ const services = [
 
 export default function WhatIDo() {
     return (
-        <section className="section-lg bg-gradient-to-br from-slate-900 via-slate-950 to-violet-900">
-            <div className="container-wide">
+        <section className="bg-gradient-to-br from-slate-900 via-slate-950 to-violet-900">
+            <div className="container-wide px-4 py-16 lg:py-24">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 lg:mb-16"
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6"
                     >
                         What I Do
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
-                        className="text-xl text-white/80 max-w-2xl mx-auto"
+                        className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
                     >
                         Specializing in modern web development and AI integration for UK businesses.
                     </motion.p>
@@ -107,23 +107,23 @@ export default function WhatIDo() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
                 >
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="card p-8 hover:shadow-xl transition-all duration-300"
+                            className="card p-6 lg:p-8 hover:shadow-xl transition-all duration-300"
                         >
-                            <div className="text-4xl mb-4">{service.icon}</div>
-                            <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                            <p className="text-white/80 mb-6 leading-relaxed">{service.description}</p>
+                            <div className="text-3xl lg:text-4xl mb-4">{service.icon}</div>
+                            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 lg:mb-4">{service.title}</h3>
+                            <p className="text-white/80 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">{service.description}</p>
 
                             {/* SEO-optimized bullet points */}
-                            <div className="mb-6">
+                            <div className="mb-4 lg:mb-6">
                                 <ul className="space-y-2">
                                     {service.bullets.map((bullet, bulletIndex) => (
-                                        <li key={bulletIndex} className="flex items-start gap-2 text-white/80 text-sm">
+                                        <li key={bulletIndex} className="flex items-start gap-2 text-white/80 text-xs sm:text-sm">
                                             <span className="text-violet-400 mt-1">•</span>
                                             <span>{bullet}</span>
                                         </li>
@@ -132,11 +132,11 @@ export default function WhatIDo() {
                             </div>
 
                             {/* Technology Tags */}
-                            <div className="flex flex-wrap gap-2 mb-6">
+                            <div className="flex flex-wrap gap-2 mb-4 lg:mb-6">
                                 {service.tags.map((tag, tagIndex) => (
                                     <span
                                         key={tagIndex}
-                                        className="px-3 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-full border border-violet-500/30"
+                                        className="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-full border border-violet-500/30"
                                     >
                                         {tag}
                                     </span>

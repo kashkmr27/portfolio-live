@@ -52,7 +52,7 @@ export default function Hero() {
     }, [controls]);
 
     return (
-        <section className="section-lg relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
+        <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
             {/* Subtle Background Pattern */}
             <div className="absolute inset-0 opacity-3">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-violet-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
@@ -61,20 +61,20 @@ export default function Hero() {
             </div>
 
             <div className="container-wide relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center min-h-[80vh]">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
                     {/* Content Column */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="space-y-8 lg:space-y-10"
+                        className="space-y-8 lg:space-y-10 px-4 pt-28 pb-12 lg:pt-32 lg:pb-32"
                     >
                         {/* Main Headline */}
                         <motion.div variants={itemVariants} className="space-y-4">
-                            <h1 className="text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                            <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                                 <span className="text-white">Frontend Developer UK</span>
                             </h1>
-                            <p className="text-xl lg:text-2xl text-violet-200 leading-relaxed">
+                            <p className="text-lg sm:text-xl lg:text-2xl text-violet-200 leading-relaxed">
                                 React, Next.js, AI Integration Specialist, SaaS & Mobile App Developer
                             </p>
                         </motion.div>
@@ -82,7 +82,7 @@ export default function Hero() {
                         {/* Supporting Line */}
                         <motion.p
                             variants={itemVariants}
-                            className="text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl"
+                            className="text-base sm:text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl"
                         >
                             I help UK startups, agencies, and remote teams build modern, scalable digital solutions.
                         </motion.p>
@@ -90,19 +90,19 @@ export default function Hero() {
                         {/* Trust Badges */}
                         <motion.div
                             variants={itemVariants}
-                            className="flex flex-wrap gap-4 pt-4"
+                            className="flex flex-wrap gap-3 sm:gap-4 pt-4"
                         >
-                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
-                                <div className="w-3 h-3 bg-violet-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-sm">100% Code Ownership</span>
+                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
+                                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-violet-400 rounded-full"></div>
+                                <span className="text-white/90 font-medium text-xs sm:text-sm">100% Code Ownership</span>
                             </div>
-                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
-                                <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-sm">GDPR-Compliant</span>
+                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
+                                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full"></div>
+                                <span className="text-white/90 font-medium text-xs sm:text-sm">GDPR-Compliant</span>
                             </div>
-                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
-                                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-sm">2-Week Support</span>
+                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
+                                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
+                                <span className="text-white/90 font-medium text-xs sm:text-sm">2-Week Support</span>
                             </div>
                         </motion.div>
 
@@ -132,61 +132,78 @@ export default function Hero() {
                     {/* Image Column */}
                     <motion.div
                         variants={itemVariants}
-                        className="flex justify-center lg:justify-end"
+                        className="flex justify-center lg:justify-end self-end px-4 pt-8 pb-8 lg:pt-0 lg:pb-0"
                     >
-                        <motion.div
-                            className="relative"
-                            variants={imageVariants}
-                            animate={controls}
-                        >
+                        <div className="relative">
                             {/* Main Image Container */}
-                            <div className="relative">
-                                <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] overflow-hidden">
+                            <div className="relative flex items-end">
+                                <div className="relative overflow-visible">
                                     <Image
-                                        src="/images/akash-kumar-frontend-developer.png"
+                                        src="/images/akash-kumar.png"
                                         alt="Akash Kumar - Frontend Developer UK, React and Next.js Specialist"
-                                        fill
+                                        width={400}
+                                        height={500}
                                         priority
-                                        className="object-contain object-center"
-                                        sizes="(max-width: 768px) 320px, (max-width: 1024px) 384px, 480px"
+                                        className="w-64 sm:w-80 h-auto lg:w-96 lg:h-auto object-contain"
+                                        sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, (max-width: 1024px) 384px, 480px"
                                     />
 
                                     {/* Subtle gradient overlay to blend with background */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
                                 </div>
 
                                 {/* Floating elements for visual interest */}
-                                <div className="absolute -top-4 -right-4 w-16 h-16 bg-violet-500/20 rounded-full blur-xl animate-pulse"></div>
-                                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-blue-500/20 rounded-full blur-xl animate-pulse animation-delay-2000"></div>
+                                <motion.div
+                                    className="absolute -top-4 -right-4 w-12 h-12 sm:w-16 sm:h-16 bg-violet-500/20 rounded-full blur-xl animate-pulse"
+                                    variants={imageVariants}
+                                    animate={controls}
+                                ></motion.div>
+                                <motion.div
+                                    className="absolute -bottom-4 -left-4 w-8 h-8 sm:w-12 sm:h-12 bg-blue-500/20 rounded-full blur-xl animate-pulse animation-delay-2000"
+                                    variants={imageVariants}
+                                    animate={controls}
+                                ></motion.div>
 
                                 {/* Professional badge overlay */}
-                                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                        <span className="text-white text-sm font-medium">Available</span>
+                                <motion.div
+                                    className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-black/60 backdrop-blur-sm border border-white/20 rounded-lg px-2 py-1 sm:px-3 sm:py-2"
+                                    variants={imageVariants}
+                                    animate={controls}
+                                >
+                                    <div className="flex items-center gap-1 sm:gap-2">
+                                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                        <span className="text-white text-xs sm:text-sm font-medium">Available</span>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
 
-                            {/* Tech stack floating cards */}
-                            <div className="absolute -bottom-6 -left-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                            {/* Tech stack floating cards - moved to better positions */}
+                            <motion.div
+                                className="absolute left-4 top-3/4 transform -translate-y-1/2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3"
+                                variants={imageVariants}
+                                animate={controls}
+                            >
+                                <div className="flex items-center gap-1 sm:gap-2">
+                                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                                         <span className="text-white text-xs font-bold">R</span>
                                     </div>
-                                    <div className="text-white text-sm font-medium">React</div>
+                                    <div className="text-white text-xs sm:text-sm font-medium">React</div>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="absolute -top-6 -right-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                            <motion.div
+                                className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-2 sm:p-3"
+                                variants={imageVariants}
+                                animate={controls}
+                            >
+                                <div className="flex items-center gap-1 sm:gap-2">
+                                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-black rounded-lg flex items-center justify-center">
                                         <span className="text-white text-xs font-bold">N</span>
                                     </div>
-                                    <div className="text-white text-sm font-medium">Next.js</div>
+                                    <div className="text-white text-xs sm:text-sm font-medium">Next.js</div>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     </motion.div>
                 </div>
             </div>

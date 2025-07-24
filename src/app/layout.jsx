@@ -84,6 +84,8 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" href="/images/logos/webdevakash.png" />
                 <meta name="theme-color" content="#7c3aed" />
                 <meta name="msapplication-TileColor" content="#7c3aed" />

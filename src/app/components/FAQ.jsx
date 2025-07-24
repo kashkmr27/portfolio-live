@@ -57,24 +57,24 @@ export default function FAQ() {
     };
 
     return (
-        <section className="section-lg bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
-            <div className="container-wide">
+        <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
+            <div className="container-wide px-4 py-16 lg:py-24">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 lg:mb-16"
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6"
                     >
                         Frequently Asked Questions
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
-                        className="text-xl text-white/80 max-w-2xl mx-auto"
+                        className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
                     >
                         Common questions about my frontend development and AI integration services.
                     </motion.p>
@@ -85,7 +85,7 @@ export default function FAQ() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="max-w-4xl mx-auto space-y-4"
+                    className="max-w-4xl mx-auto space-y-3 lg:space-y-4"
                 >
                     {faqs.map((faq, index) => (
                         <motion.div
@@ -94,13 +94,13 @@ export default function FAQ() {
                             className="card cursor-pointer hover:shadow-lg transition-all duration-300"
                             onClick={() => toggleFAQ(index)}
                         >
-                            <div className="p-6">
+                            <div className="p-4 lg:p-6">
                                 <div className="flex items-center justify-between">
-                                    <h3 className="text-lg font-bold text-white pr-4">
+                                    <h3 className="text-base sm:text-lg font-bold text-white pr-4">
                                         {faq.question}
                                     </h3>
-                                    <div className={`w-6 h-6 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
-                                        <svg className="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </div>
@@ -112,9 +112,9 @@ export default function FAQ() {
                                         animate={{ opacity: 1, height: "auto" }}
                                         exit={{ opacity: 0, height: 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className="mt-4 pt-4 border-t border-slate-700/50"
+                                        className="mt-3 lg:mt-4 pt-3 lg:pt-4 border-t border-slate-700/50"
                                     >
-                                        <p className="text-white/80 leading-relaxed">
+                                        <p className="text-white/80 leading-relaxed text-sm sm:text-base">
                                             {faq.answer}
                                         </p>
                                     </motion.div>
@@ -126,7 +126,7 @@ export default function FAQ() {
 
                 <motion.div
                     variants={itemVariants}
-                    className="text-center mt-12"
+                    className="text-center mt-8 lg:mt-12"
                 >
                     <Link
                         href="/contact"

@@ -61,24 +61,24 @@ const trustFactors = [
 
 export default function WhyTrustMe() {
     return (
-        <section className="section-lg bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
-            <div className="container-wide">
+        <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
+            <div className="container-wide px-4 py-16 lg:py-24">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 lg:mb-16"
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6"
                     >
                         Why Clients Trust Me
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
-                        className="text-xl text-white/80 max-w-2xl mx-auto"
+                        className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
                     >
                         Professional guarantees that ensure your project&apos;s success and your peace of mind.
                     </motion.p>
@@ -89,19 +89,19 @@ export default function WhyTrustMe() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
                 >
                     {trustFactors.map((factor, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="card p-8 text-center hover:shadow-xl transition-all duration-300"
+                            className="card p-6 lg:p-8 text-center hover:shadow-xl transition-all duration-300"
                         >
-                            <div className="flex justify-center mb-6">
+                            <div className="flex justify-center mb-4 lg:mb-6">
                                 {factor.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">{factor.title}</h3>
-                            <p className="text-white/80 mb-6 leading-relaxed">{factor.description}</p>
+                            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 lg:mb-4">{factor.title}</h3>
+                            <p className="text-white/80 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">{factor.description}</p>
                             <Link
                                 href={factor.link}
                                 className="text-violet-400 hover:text-violet-300 font-medium text-sm transition-colors inline-flex items-center gap-1"

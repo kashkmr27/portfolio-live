@@ -184,6 +184,12 @@ p {
   padding: 0 var(--space-20);
 }
 
+@media screen and (max-width: 992px) {
+  .container-wide {
+    padding: 0 var(--space-10);
+  }
+}
+
 .section {
   padding: var(--space-20) 0;
 }

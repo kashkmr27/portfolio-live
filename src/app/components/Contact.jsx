@@ -46,41 +46,43 @@ const Contact = () => {
     return (
         <div className="dark" id='contact'>
             <motion.div
-                className="py-16 bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900 flex flex-col justify-center items-center"
+                className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900 flex flex-col justify-center items-center"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl text-white font-bold mb-4">Contact Me</h2>
-                    <p className="text-xl text-white/80 max-w-2xl mx-auto">
-                        Ready to start your project? Get in touch for a free consultation about your frontend development or AI integration needs.
-                    </p>
-                </div>
+                <div className="container-wide px-4 py-16 lg:py-24">
+                    <div className="text-center mb-8 lg:mb-12">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-bold mb-3 lg:mb-4">Contact Me</h2>
+                        <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
+                            Ready to start your project? Get in touch for a free consultation about your frontend development or AI integration needs.
+                        </p>
+                    </div>
 
-                <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                    {contactMethods.map((method) => (
-                        <motion.a
-                            key={method.id}
-                            href={method.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variants={boxVariants}
-                            whileHover="whileHover"
-                            whileTap="whileTap"
-                            className="flex flex-col items-center gap-4 p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 cursor-pointer transition-all duration-300 text-center"
-                        >
-                            <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center">
-                                {method.icon}
-                            </div>
-                            <div>
-                                <span className="text-white text-lg font-semibold block">{method.name}</span>
-                                <p className="text-violet-400 text-sm mt-1">{method.value}</p>
-                                <p className="text-white/70 text-sm mt-2">{method.description}</p>
-                            </div>
-                        </motion.a>
-                    ))}
-                </motion.div>
+                    <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
+                        {contactMethods.map((method) => (
+                            <motion.a
+                                key={method.id}
+                                href={method.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                variants={boxVariants}
+                                whileHover="whileHover"
+                                whileTap="whileTap"
+                                className="flex flex-col items-center gap-3 lg:gap-4 p-4 lg:p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 cursor-pointer transition-all duration-300 text-center"
+                            >
+                                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-violet-500/20 rounded-full flex items-center justify-center">
+                                    {method.icon}
+                                </div>
+                                <div>
+                                    <span className="text-white text-base lg:text-lg font-semibold block">{method.name}</span>
+                                    <p className="text-violet-400 text-xs lg:text-sm mt-1">{method.value}</p>
+                                    <p className="text-white/70 text-xs lg:text-sm mt-2">{method.description}</p>
+                                </div>
+                            </motion.a>
+                        ))}
+                    </motion.div>
+                </div>
             </motion.div>
         </div>
     );

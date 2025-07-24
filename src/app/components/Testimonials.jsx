@@ -26,20 +26,20 @@ export default function Testimonials() {
     ];
 
     return (
-        <section id="testimonials" className="section-lg bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
-            <div className="container-wide">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">What Clients & Colleagues Say</h2>
-                    <p className="text-xl text-white/80 max-w-2xl mx-auto">
+        <section id="testimonials" className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
+            <div className="container-wide px-4 py-16 lg:py-24">
+                <div className="text-center mb-12 lg:mb-16">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6">What Clients & Colleagues Say</h2>
+                    <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
                         Hear from UK businesses and remote teams who&apos;ve experienced my work firsthand.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <div key={index} className="card p-6 hover:shadow-xl transition-all duration-300">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                        <div key={index} className="card p-4 lg:p-6 hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-center gap-3 mb-3 lg:mb-4">
+                                <div className="relative w-10 h-10 lg:w-12 lg:h-12 rounded-full overflow-hidden">
                                     <Image
                                         src={testimonial.image}
                                         alt={testimonial.name}
@@ -48,20 +48,20 @@ export default function Testimonials() {
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                                    <p className="text-white/70 text-sm">{testimonial.role}</p>
+                                    <h4 className="text-white font-semibold text-sm lg:text-base">{testimonial.name}</h4>
+                                    <p className="text-white/70 text-xs lg:text-sm">{testimonial.role}</p>
                                 </div>
                             </div>
 
-                            <div className="flex gap-1 mb-4">
+                            <div className="flex gap-1 mb-3 lg:mb-4">
                                 {[...Array(testimonial.rating)].map((_, i) => (
-                                    <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg key={i} className="w-3 h-3 lg:w-4 lg:h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
                                 ))}
                             </div>
 
-                            <p className="text-white/80 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
+                            <p className="text-white/80 leading-relaxed text-sm lg:text-base">&ldquo;{testimonial.content}&rdquo;</p>
                         </div>
                     ))}
                 </div>
