@@ -300,7 +300,7 @@ p {
 
 /* ===== CARD SYSTEM ===== */
 .card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.9));
+  /* background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.9)); */
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   border: 1px solid rgba(187, 134, 252, 0.15);
