@@ -83,11 +83,8 @@ export default function RootLayout({ children }) {
         <html lang="en-GB">
             <head>
                 <link rel="manifest" href="/manifest.json" />
-                <link rel="icon" href="/favicon.ico" />
-                <link rel="shortcut icon" href="/favicon.ico" />
-                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" href="/images/logos/webdevakash.png" />
-                <meta name="theme-color" content="#7c3aed" />
+                <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+                <link rel="shortcut icon" href="/favicon-32x32.png" />                <meta name="theme-color" content="#7c3aed" />
                 <meta name="msapplication-TileColor" content="#7c3aed" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
@@ -147,7 +144,6 @@ export default function RootLayout({ children }) {
                             "@type": "Organization",
                             "name": "Akash Kumar - Frontend Developer",
                             "url": "https://akashbuilds.com",
-                            "logo": "https://akashbuilds.com/images/logos/webdevakash.png",
                             "description": "Professional frontend development services in London, UK",
                             "address": {
                                 "@type": "PostalAddress",

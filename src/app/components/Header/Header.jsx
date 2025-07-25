@@ -3,29 +3,32 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 import { useRouter, usePathname } from 'next/navigation';
-import { NAV_LINKS, SERVICES_DROPDOWN } from "../../constants";
+import { NAV_LINKS, SERVICES_DROPDOWN, TOOLS_DROPDOWN } from "../../constants";
 
-const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesOpen }) => {
+const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesOpen, setToolsOpen, toolsOpen }) => {
     const servicesRef = useRef(null);
+    const toolsRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (servicesRef.current && !servicesRef.current.contains(event.target)) {
                 setServicesOpen(false);
             }
+            if (toolsRef.current && !toolsRef.current.contains(event.target)) {
+                setToolsOpen(false);
+            }
         };
 
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [setServicesOpen]);
+    }, [setServicesOpen, setToolsOpen]);
 
     return (
         <nav className="nav">
             <ul className="nav__list">
                 {NAV_LINKS.map((link) => {
                     const isActive = pathname === link.href ||
-                        (link.href.startsWith('/') && pathname.startsWith(link.href)) ||
-                        (link.href.startsWith('#') && pathname === '/' && link.href === '#testimonials');
+                        (link.href.startsWith("/") && pathname.startsWith(link.href));
 
                     return (
                         <li key={link.key}>
@@ -72,13 +75,59 @@ const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesO
                                     <Link
                                         key={service.href}
                                         href={service.href}
-                                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200 group"
+                                        className="flex items-center p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200 group"
                                         onClick={() => setServicesOpen(false)}
                                     >
-                                        <span className="text-lg group-hover:scale-110 transition-transform duration-200">{service.icon}</span>
+                                        
                                         <div>
                                             <div className="text-white font-medium group-hover:text-violet-300 transition-colors">{service.title}</div>
                                             <div className="text-slate-400 text-sm">{service.description}</div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </li>
+
+                {/* Tools Dropdown */}
+                <li
+                    className="relative"
+                    ref={toolsRef}
+                    onMouseEnter={() => setToolsOpen(true)}
+                    onMouseLeave={() => setToolsOpen(false)}
+                >
+                    <Link
+                        href="/tools"
+                        className={`nav__link flex items-center gap-1 ${pathname.startsWith('/tools') ? 'nav__link--active' : ''}`}
+                        onClick={e => handleNavClick(e, '/tools')}
+                    >
+                        Tools
+                        <svg
+                            className={`w-4 h-4 transition-transform duration-200 ${toolsOpen ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </Link>
+
+                    {/* Dropdown Menu */}
+                    {toolsOpen && (
+                        <div className="absolute top-full left-0 mt-2 w-64 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-lg shadow-xl z-50 backdrop-blur-sm">
+                            <div className="p-2">
+                                {TOOLS_DROPDOWN.map((tool) => (
+                                    <Link
+                                        key={tool.href}
+                                        href={tool.href}
+                                        className="flex items-center p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200 group"
+                                        onClick={() => setToolsOpen(false)}
+                                    >
+                                        
+                                        <div>
+                                            <div className="text-white font-medium group-hover:text-violet-300 transition-colors">{tool.title}</div>
+                                            <div className="text-slate-400 text-sm">{tool.description}</div>
                                         </div>
                                     </Link>
                                 ))}
@@ -95,6 +144,7 @@ const Header = () => {
     const [active, setActive] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [toolsOpen, setToolsOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
 
@@ -143,6 +193,8 @@ const Header = () => {
                         pathname={pathname}
                         setServicesOpen={setServicesOpen}
                         servicesOpen={servicesOpen}
+                        setToolsOpen={setToolsOpen}
+                        toolsOpen={toolsOpen}
                     />
 
                     {/* CTA Button */}
@@ -172,13 +224,13 @@ const Header = () => {
             <div className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${active ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                 {/* Backdrop */}
                 <div
-                    className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                    className="absolute inset-0 bg-black/90 backdrop-blur-lg"
                     onClick={() => setActive(false)}
                 ></div>
 
                 {/* Mobile Menu */}
-                <div className={`absolute top-0 right-0 w-80 h-full bg-gradient-to-b from-slate-900 to-slate-800 border-l border-white/10 transform transition-transform duration-300 ${active ? 'translate-x-0' : 'translate-x-full'}`}>
-                    <div className="p-8 h-full flex flex-col">
+                <div className={`absolute top-0 right-0 w-80 h-screen bg-slate-900/95 backdrop-blur-xl border-l border-white/20 transform transition-transform duration-300 ${active ? 'translate-x-0' : 'translate-x-full'}`}>
+                    <div className="p-8 h-screen flex flex-col">
                         {/* Mobile Logo */}
                         <div className="mb-12">
                             <Link href="/" onClick={() => setActive(false)}>
@@ -197,8 +249,7 @@ const Header = () => {
                             <ul className="space-y-6">
                                 {NAV_LINKS.map((link) => {
                                     const isActive = pathname === link.href ||
-                                        (link.href.startsWith('/') && pathname.startsWith(link.href)) ||
-                                        (link.href.startsWith('#') && pathname === '/' && link.href === '#testimonials');
+                                        (link.href.startsWith("/") && pathname.startsWith(link.href));
 
                                     return (
                                         <li key={link.key}>
@@ -231,13 +282,40 @@ const Header = () => {
                                             <Link
                                                 key={service.href}
                                                 href={service.href}
-                                                className="flex items-center gap-3 pl-6 py-2 text-white/80 hover:text-white transition-colors"
+                                                className="flex items-center pl-6 py-2 text-white/80 hover:text-white transition-colors"
                                                 onClick={() => setActive(false)}
                                             >
-                                                <span className="text-lg">{service.icon}</span>
+                                                
                                                 <div>
                                                     <div className="font-medium">{service.title}</div>
                                                     <div className="text-sm text-white/60">{service.description}</div>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </li>
+
+                                {/* Mobile Tools Dropdown */}
+                                <li>
+                                    <div className="space-y-3">
+                                        <Link
+                                            href="/tools"
+                                            className="text-lg font-medium text-white hover:text-violet-400 transition-colors"
+                                            onClick={() => setActive(false)}
+                                        >
+                                            Tools
+                                        </Link>
+                                        {TOOLS_DROPDOWN.map((tool) => (
+                                            <Link
+                                                key={tool.href}
+                                                href={tool.href}
+                                                className="flex items-center pl-6 py-2 text-white/80 hover:text-white transition-colors"
+                                                onClick={() => setActive(false)}
+                                            >
+                                                
+                                                <div>
+                                                    <div className="font-medium">{tool.title}</div>
+                                                    <div className="text-sm text-white/60">{tool.description}</div>
                                                 </div>
                                             </Link>
                                         ))}
