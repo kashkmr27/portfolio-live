@@ -8,6 +8,5 @@ export default function robots() {
             },
         ],
         sitemap: 'https://akashbuilds.com/sitemap.xml',
-        host: 'https://akashbuilds.com',
     };
 } 

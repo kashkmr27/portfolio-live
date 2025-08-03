@@ -1,7 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['akashbuilds.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'akashbuilds.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'darkcyan-pony-605661.hostingersite.com',
+                port: '',
+                pathname: '/**',
+            },
+        ],
         formats: ['image/webp', 'image/avif'],
     },
     compress: true,

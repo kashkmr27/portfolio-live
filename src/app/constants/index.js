@@ -1,5 +1,6 @@
 export const NAV_LINKS = [
     { href: '/about', key: 'about', label: 'About' },
+    { href: '/blog', key: 'blog', label: 'Blog' },
     { href: '/portfolio', key: 'portfolio', label: 'Portfolio' },
     { href: '/contact', key: 'contact', label: 'Contact' },
     { href: '/case-studies', key: 'case-studies', label: 'Case Studies' },

@@ -78,7 +78,7 @@ const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesO
                                         className="flex items-center p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200 group"
                                         onClick={() => setServicesOpen(false)}
                                     >
-                                        
+
                                         <div>
                                             <div className="text-white font-medium group-hover:text-violet-300 transition-colors">{service.title}</div>
                                             <div className="text-slate-400 text-sm">{service.description}</div>
@@ -124,7 +124,7 @@ const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesO
                                         className="flex items-center p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200 group"
                                         onClick={() => setToolsOpen(false)}
                                     >
-                                        
+
                                         <div>
                                             <div className="text-white font-medium group-hover:text-violet-300 transition-colors">{tool.title}</div>
                                             <div className="text-slate-400 text-sm">{tool.description}</div>
@@ -145,6 +145,8 @@ const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
     const [toolsOpen, setToolsOpen] = useState(false);
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+    const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
 
@@ -155,21 +157,12 @@ const Header = () => {
     }, []);
 
     const handleNavClick = (e, href) => {
-        if (href.startsWith('#')) {
+        if (href === pathname) {
             e.preventDefault();
-            const sectionId = href.replace('#', '');
-
-            if (pathname !== '/') {
-                router.push(`/#${sectionId}`);
-            } else {
-                // Already on home: smooth scroll
-                const element = document.getElementById(sectionId);
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }
-            setActive(false); // Always close mobile menu
-        } else {
-            setActive(false); // Always close mobile menu
         }
+        setActive(false);
+        setMobileServicesOpen(false);
+        setMobileToolsOpen(false);
     };
 
     return (
@@ -271,54 +264,80 @@ const Header = () => {
                                 {/* Mobile Services Dropdown */}
                                 <li>
                                     <div className="space-y-3">
-                                        <Link
-                                            href="/services"
-                                            className="text-lg font-medium text-white hover:text-violet-400 transition-colors"
-                                            onClick={() => setActive(false)}
+                                        <button
+                                            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                            className="flex items-center justify-between w-full text-lg font-medium text-white hover:text-violet-400 transition-colors"
                                         >
                                             Services
-                                        </Link>
-                                        {SERVICES_DROPDOWN.map((service) => (
-                                            <Link
-                                                key={service.href}
-                                                href={service.href}
-                                                className="flex items-center pl-6 py-2 text-white/80 hover:text-white transition-colors"
-                                                onClick={() => setActive(false)}
+                                            <svg
+                                                className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
                                             >
-                                                
-                                                <div>
-                                                    <div className="font-medium">{service.title}</div>
-                                                    <div className="text-sm text-white/60">{service.description}</div>
-                                                </div>
-                                            </Link>
-                                        ))}
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+                                        {mobileServicesOpen && (
+                                            <div className="space-y-2 pl-4 border-l border-white/20">
+                                                {SERVICES_DROPDOWN.map((service) => (
+                                                    <Link
+                                                        key={service.href}
+                                                        href={service.href}
+                                                        className="flex items-center py-2 text-white/80 hover:text-white transition-colors"
+                                                        onClick={() => {
+                                                            setActive(false);
+                                                            setMobileServicesOpen(false);
+                                                        }}
+                                                    >
+                                                        <div>
+                                                            <div className="font-medium">{service.title}</div>
+                                                            <div className="text-sm text-white/60">{service.description}</div>
+                                                        </div>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </li>
 
                                 {/* Mobile Tools Dropdown */}
                                 <li>
                                     <div className="space-y-3">
-                                        <Link
-                                            href="/tools"
-                                            className="text-lg font-medium text-white hover:text-violet-400 transition-colors"
-                                            onClick={() => setActive(false)}
+                                        <button
+                                            onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
+                                            className="flex items-center justify-between w-full text-lg font-medium text-white hover:text-violet-400 transition-colors"
                                         >
                                             Tools
-                                        </Link>
-                                        {TOOLS_DROPDOWN.map((tool) => (
-                                            <Link
-                                                key={tool.href}
-                                                href={tool.href}
-                                                className="flex items-center pl-6 py-2 text-white/80 hover:text-white transition-colors"
-                                                onClick={() => setActive(false)}
+                                            <svg
+                                                className={`w-4 h-4 transition-transform duration-200 ${mobileToolsOpen ? 'rotate-180' : ''}`}
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
                                             >
-                                                
-                                                <div>
-                                                    <div className="font-medium">{tool.title}</div>
-                                                    <div className="text-sm text-white/60">{tool.description}</div>
-                                                </div>
-                                            </Link>
-                                        ))}
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+                                        {mobileToolsOpen && (
+                                            <div className="space-y-2 pl-4 border-l border-white/20">
+                                                {TOOLS_DROPDOWN.map((tool) => (
+                                                    <Link
+                                                        key={tool.href}
+                                                        href={tool.href}
+                                                        className="flex items-center py-2 text-white/80 hover:text-white transition-colors"
+                                                        onClick={() => {
+                                                            setActive(false);
+                                                            setMobileToolsOpen(false);
+                                                        }}
+                                                    >
+                                                        <div>
+                                                            <div className="font-medium">{tool.title}</div>
+                                                            <div className="text-sm text-white/60">{tool.description}</div>
+                                                        </div>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </li>
                             </ul>
