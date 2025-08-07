@@ -9,7 +9,6 @@ export async function GET(request) {
     if (!originalUrl) {
         return new NextResponse('Missing URL parameter', { status: 400 });
     }
-
     try {
         // Fetch the image from WordPress
         const response = await fetch(originalUrl);

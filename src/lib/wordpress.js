@@ -1,8 +1,5 @@
 const WORDPRESS_API_URL = 'https://darkcyan-pony-605661.hostingersite.com/wp-json/wp/v2';
 
-/**
- * Optimize and rewrite image URLs to our domain
- */
 function optimizeImageUrl(originalUrl, imageId) {
     if (!originalUrl) return null;
 
