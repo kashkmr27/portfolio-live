@@ -948,9 +948,12 @@ p {
 
 /* Images */
 .blog-content img {
-  max-height: 500px;
+  max-height: 450px;
   width: 100%;
   object-fit: contain;
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
 }
 
 /* Tables */

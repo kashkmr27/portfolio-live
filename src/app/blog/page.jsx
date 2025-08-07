@@ -200,9 +200,10 @@ export default async function BlogPage() {
                         {/* Blog Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                             {postsWithData.map((post, index) => (
-                                <article
+                                <Link
                                     key={post.slug}
-                                    className="group bg-gradient-to-br from-slate-800/50 to-slate-900/70 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-slate-600/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                                    href={`/blog/${post.slug}`}
+                                    className="group bg-gradient-to-br from-slate-800/50 to-slate-900/70 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-slate-600/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl block"
                                 >
                                     {/* Featured Image */}
                                     <div className="relative h-56 lg:h-64 overflow-hidden">
@@ -262,19 +263,8 @@ export default async function BlogPage() {
                                                 5 min read
                                             </span>
                                         </div> */}
-
-                                        {/* Read More Link */}
-                                        <Link
-                                            href={`/blog/${post.slug}`}
-                                            className="inline-flex items-center text-violet-400 hover:text-violet-300 font-semibold text-sm group/link transition-colors"
-                                        >
-                                            Read More
-                                            <svg className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </Link>
                                     </div>
-                                </article>
+                                </Link>
                             ))}
                         </div>
 
