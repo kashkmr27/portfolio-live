@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header/Header';
 import WhyTrustMe from './components/WhyTrustMe';
+import ProductGuarantees from './components/ProductGuarantees';
 import WhatIDo from './components/WhatIDo';
 import SkillsTechnologies from './components/SkillsTechnologies';
 import FeaturedProjects from './components/FeaturedProjects';
@@ -20,6 +21,7 @@ export default function Home() {
             <main>
                 <Hero />
                 <WhyTrustMe />
+                <ProductGuarantees />
                 <WhatIDo />
                 <SkillsTechnologies />
                 <Testimonials />

@@ -70,6 +70,12 @@ export default function sitemap() {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/case-studies/crypto-analysis`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/portfolio`,
             lastModified: currentDate,
             changeFrequency: 'monthly',

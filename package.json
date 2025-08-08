@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "@next/third-parties": "^14.2.5",
+    "@types/node": "24.2.0",
+    "@types/react": "19.1.9",
     "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",

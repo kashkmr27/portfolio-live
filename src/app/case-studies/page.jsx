@@ -5,10 +5,10 @@ import Footer from '../components/Footer';
 import TrustBadgeGrid from '../components/TrustBadgeGrid';
 
 export const metadata = {
-    title: "Case Studies | Frontend Developer London | Akash Kumar | AI, FinTech & Digital Solutions",
+    title: "Case Studies | Frontend & Aspiring Product Engineer London | Akash Kumar | AI, FinTech & Digital Solutions",
     description: "Explore detailed case studies of high-impact digital solutions by London frontend developer Akash Kumar. AI travel planning, FinTech onboarding, digital transformation. Real results, proven expertise.",
     keywords: [
-        "Frontend Developer London",
+        "Frontend & Aspiring Product Engineer London",
         "Case Studies",
         "AI Developer UK",
         "FinTech Developer",
@@ -18,7 +18,7 @@ export const metadata = {
         "Web Development Portfolio"
     ],
     openGraph: {
-        title: "Case Studies | Frontend Developer London | Akash Kumar",
+        title: "Case Studies | Frontend & Aspiring Product Engineer London | Akash Kumar",
         description: "Real results from AI travel planning, FinTech onboarding, and digital transformation projects. See how I deliver business impact.",
         type: "website",
         url: "https://akashkumar.dev/case-studies"
@@ -45,6 +45,17 @@ const CASE_STUDIES = [
         keyMetric: '30% boost in user retention',
         technologies: ['Next.js', 'OpenAI GPT-4', 'TypeScript', 'WebSockets'],
         category: 'AI/ML'
+    },
+    {
+        slug: 'crypto-analysis',
+        title: 'CryptoAnalysis – Real‑Time Crypto Tracker & Watchlist',
+        client: 'Crypto SaaS',
+        summary:
+            'Lightning‑fast React + TypeScript app with live market data, personalised watchlists and interactive charts. Firebase, CoinGecko, Chart.js.',
+        image: '/images/case-studies/crypto-analysis/real-time-cryptocurrency-tracker-react-dashboard-homepage.png',
+        keyMetric: '95+ Lighthouse scores',
+        technologies: ['React', 'TypeScript', 'Firebase', 'CoinGecko API'],
+        category: 'Web App'
     }
 ];
 

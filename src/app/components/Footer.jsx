@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Footer() {
     return (
-        <footer className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900 border-t border-white/10">
+        <footer className="border-t border-white/10" style={{ background: 'var(--gradient-footer)' }}>
             <div className="container">
                 <div className="py-12">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -22,6 +22,14 @@ export default function Footer() {
                                 Frontend developer specializing in React, Next.js, and AI-integrated web applications.
                                 Building modern, scalable solutions for startups and agencies.
                             </p>
+                            <div className="mt-4 flex flex-wrap gap-4 text-sm">
+                                <Link href="/services/react-development" className="text-white/80 hover:text-white underline underline-offset-4">
+                                    Hire a Front-End & Aspiring Product Engineer
+                                </Link>
+                                <Link href="/services" className="text-white/80 hover:text-white underline underline-offset-4">
+                                    MVP Developer UK
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Quick Links */}
@@ -87,6 +95,10 @@ export default function Footer() {
                                 Terms of Service
                             </Link>
                         </div>
+                    </div>
+
+                    <div className="mt-4 text-center text-white/60 text-xs">
+                        Built with React/Next.js · Deployed on Vercel
                     </div>
                 </div>
             </div>

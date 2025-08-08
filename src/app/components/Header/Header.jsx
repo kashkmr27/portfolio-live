@@ -175,7 +175,7 @@ const Header = () => {
                         alt="Akash Kumar - Web developer and designer"
                         width={120}
                         height={36}
-                        className="h-9 w-auto"
+                        className="h-9 w-auto drop-shadow-[0_4px_16px_rgba(124,58,237,0.25)]"
                     />
                 </Link>
 

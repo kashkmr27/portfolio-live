@@ -1,68 +1,72 @@
 import Link from 'next/link';
 
 export default function Work() {
+    const steps = [
+        {
+            title: 'Quick Call',
+            bullets: [
+                'Scope: goals, constraints, success metrics',
+                'Timeline: 30–45 min discovery',
+                'Deliverables: notes + next steps'
+            ]
+        },
+        {
+            title: 'Prototype in 7–14 Days',
+            bullets: [
+                'Scope: core flows, clickable demo',
+                'Timeline: 1–2 weeks rapid build',
+                'Deliverables: prototype + feedback plan'
+            ]
+        },
+        {
+            title: 'Launch & Iterate',
+            bullets: [
+                'Scope: production deploy with tracking',
+                'Timeline: ship fast, improve weekly',
+                'Deliverables: release + roadmap'
+            ]
+        }
+    ];
+
     return (
         <section className="section">
             <div className="container">
-                <div className="text-center mb-16">
-                    <h2 className="section-header__title">How I Work</h2>
-                    <p className="section-header__description">
-                        A proven process that delivers exceptional results for my clients
-                    </p>
+                <div className="text-center mb-12">
+                    <h2 className="section-header__title">Next Steps</h2>
+                    <p className="section-header__description">A simple, outcome-focused path to shipping.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Step 1 */}
-                    <div className="card text-center">
-                        <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span className="text-2xl font-bold text-violet-400">1</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-4">Discovery</h3>
-                        <p className="text-white/70">
-                            Understanding your goals, requirements, and target audience to create the perfect solution.
-                        </p>
-                    </div>
+                {/* Progress bar */}
+                <ol className="relative max-w-3xl mx-auto border-l border-white/10 pl-6">
+                    {steps.map((step, idx) => (
+                        <li key={step.title} className="relative py-6 group">
+                            <span className="absolute -left-2 top-7 w-3 h-3 rounded-full bg-violet-400 ring-4 ring-violet-400/20" aria-hidden></span>
+                            <div className="flex items-start gap-4">
+                                <div className="shrink-0 w-8 h-8 rounded-full bg-white/5 border border-white/10 grid place-items-center text-white/70 text-sm font-semibold">
+                                    {idx + 1}
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-white font-semibold">{step.title}</h3>
+                                    <ul className="mt-2 hidden group-hover:block group-focus-within:block space-y-1 text-white/80 text-sm">
+                                        {step.bullets.map((b) => (
+                                            <li key={b} className="flex items-start gap-2">
+                                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-violet-400" />
+                                                <span>{b}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
 
-                    {/* Step 2 */}
-                    <div className="card text-center">
-                        <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span className="text-2xl font-bold text-violet-400">2</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-4">Planning</h3>
-                        <p className="text-white/70">
-                            Creating detailed wireframes, user flows, and technical architecture for your project.
-                        </p>
-                    </div>
-
-                    {/* Step 3 */}
-                    <div className="card text-center">
-                        <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span className="text-2xl font-bold text-violet-400">3</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-4">Development</h3>
-                        <p className="text-white/70">
-                            Building your application with modern technologies, clean code, and best practices.
-                        </p>
-                    </div>
-
-                    {/* Step 4 */}
-                    <div className="card text-center">
-                        <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span className="text-2xl font-bold text-violet-400">4</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-4">Launch</h3>
-                        <p className="text-white/70">
-                            Deploying your project with thorough testing, optimization, and ongoing support.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="text-center mt-12">
-                    <Link href="/contact" className="btn btn-primary btn-lg">
-                        Start Your Project
-                    </Link>
+                {/* Persistent CTAs */}
+                <div className="text-center mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/contact" className="btn btn-secondary btn-lg">Hire Me (FT)</Link>
+                    <Link href="/contact" className="btn btn-primary btn-lg">Start a Project</Link>
                 </div>
             </div>
         </section>
     );
-} 
+}

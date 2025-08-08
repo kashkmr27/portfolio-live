@@ -28,7 +28,7 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                 },
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Akash Kumar - Frontend Developer",
+                    "name": "Akash Kumar - Frontend & Aspiring Product Engineer",
                     "logo": {
                         "@type": "ImageObject",
                         "url": "https://akashbuilds.com/logo.png"
@@ -72,7 +72,7 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
             {
                 "@type": "Organization",
                 "@id": "https://akashbuilds.com/#organization",
-                "name": "Akash Kumar - Frontend Developer",
+                "name": "Akash Kumar - Frontend & Aspiring Product Engineer",
                 "url": "https://akashbuilds.com",
                 "logo": {
                     "@type": "ImageObject",
@@ -94,7 +94,7 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                 "@type": "WebSite",
                 "@id": "https://akashbuilds.com/#website",
                 "url": "https://akashbuilds.com",
-                "name": "Akash Kumar - Frontend Developer",
+                "name": "Akash Kumar - Frontend & Aspiring Product Engineer",
                 "description": "AI Integration & Automation Services for UK Small Businesses",
                 "publisher": {
                     "@id": "https://akashbuilds.com/#organization"

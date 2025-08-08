@@ -13,6 +13,22 @@ const contactMethods = [
         description: 'Get in touch for project inquiries and consultations'
     },
     {
+        id: 4,
+        name: 'Calendly',
+        value: 'Book 30‑min call',
+        link: 'https://calendly.com/connect-akashbuilds/30min',
+        icon: <span className="text-violet-400 text-xl">📅</span>,
+        description: 'Schedule a quick product jam'
+    },
+    {
+        id: 5,
+        name: 'Location',
+        value: 'London, UK',
+        link: '#',
+        icon: <span className="text-violet-400 text-xl">📍</span>,
+        description: 'Response window: within 24h (business days)'
+    },
+    {
         id: 2,
         name: 'LinkedIn',
         value: '@theakashkumar',

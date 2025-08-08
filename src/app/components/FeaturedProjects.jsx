@@ -35,6 +35,14 @@ const featuredProjects = [
         tags: ["Next.js", "ChatGPT API", "AI Integration", "UK Startup"],
         projectLink: "/case-studies/easytripai",
         caseStudyLink: "/case-studies/easytripai"
+    },
+    {
+        title: "CryptoAnalysis",
+        description: "Real-time crypto tracker with personalised watchlists and interactive charts. React + TypeScript, Firebase, CoinGecko API, Chart.js.",
+        image: "/images/case-studies/crypto-analysis/real-time-cryptocurrency-tracker-react-dashboard-homepage.png",
+        tags: ["React", "TypeScript", "Firebase", "CoinGecko API"],
+        projectLink: "/case-studies/crypto-analysis",
+        caseStudyLink: "/case-studies/crypto-analysis"
     }
 ];
 

@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
             description: cleanExcerpt,
             type: "article",
             url: `https://akashbuilds.com/blog/${slug}`,
-            siteName: "Akash Kumar - Frontend Developer",
+            siteName: "Akash Kumar - Frontend & Aspiring Product Engineer",
             images: [
                 {
                     url: 'https://akashbuilds.com/og-image-blog.jpg',

@@ -25,7 +25,7 @@ export const metadata = {
         description: "Expert insights on AI integration, automation, and digital growth strategies for UK small businesses.",
         type: "website",
         url: "https://akashbuilds.com/blog",
-        siteName: "Akash Kumar - Frontend Developer",
+        siteName: "Akash Kumar - Frontend & Aspiring Product Engineer",
         images: [
             {
                 url: 'https://akashbuilds.com/og-image-blog.jpg',

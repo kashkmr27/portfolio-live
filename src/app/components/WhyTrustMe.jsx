@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -26,37 +27,80 @@ const itemVariants = {
     },
 };
 
-const trustFactors = [
+const tiles = [
     {
+        hero: true,
+        title: "Senior React Developer",
+        description: "5+ years shipping production apps with React/TypeScript.",
+        metric: "50+ releases",
         icon: (
-            <svg className="w-8 h-8 text-violet-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+            <svg className="w-8 h-8 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v12m6-6H6" />
             </svg>
         ),
-        title: "100% Code Ownership",
-        description: "You retain full rights to every line of code I deliver.",
-        link: "/services"
+        href: "/services/react-development",
+        anchorText: "react developer london",
     },
     {
+        title: "Scaled features for UK startups & Fortune 500",
+        description: "",
+        metric: "10M+ users touched",
         icon: (
-            <svg className="w-8 h-8 text-violet-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+            <svg className="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7h18M3 12h18M3 17h18" />
             </svg>
         ),
-        title: "GDPR Compliant",
-        description: "All work meets strict UK/EU privacy and security standards.",
-        link: "/services"
+        href: "/services/react-development",
+        anchorText: "react developer london",
     },
     {
+        title: "AI Integration Specialist",
+        description: "ChatGPT/OpenAI for search, onboarding, and automation.",
+        metric: "15+ AI features",
         icon: (
-            <svg className="w-8 h-8 text-violet-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            <svg className="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v12m6-6H6" />
             </svg>
         ),
-        title: "2-Week Support",
-        description: "You get free advice and fixes for 2 weeks after launch.",
-        link: "/contact"
-    }
+        href: "/services/ai-integration",
+        anchorText: "chatgpt api developer",
+    },
+    {
+        title: "2-Week MVP Delivery",
+        description: "Rapid prototyping to validated demo.",
+        metric: "95% on-time",
+        icon: (
+            <svg className="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v8m-4-4h8" />
+            </svg>
+        ),
+        href: "/services",
+        anchorText: "mvp developer uk",
+    },
+    {
+        title: "GDPR-Ready By Design",
+        description: "UK/EU data handling & privacy baked in.",
+        metric: "100% compliance",
+        icon: (
+            <svg className="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+        ),
+        href: "/services/ai-integration",
+        anchorText: "chatgpt api developer",
+    },
+    {
+        title: "Post-Launch Iteration",
+        description: "2 weeks free support; roadmap included.",
+        metric: "24/7 response window",
+        icon: (
+            <svg className="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v8m-4-4h8" />
+            </svg>
+        ),
+        href: "/contact",
+        anchorText: "react developer london",
+    },
 ];
 
 export default function WhyTrustMe() {
@@ -74,13 +118,13 @@ export default function WhyTrustMe() {
                         variants={itemVariants}
                         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6"
                     >
-                        Why Clients Trust Me
+                        Why Choose Me
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
                         className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
                     >
-                        Professional guarantees that ensure your project&apos;s success and your peace of mind.
+                        Bento grid of credibility signals I bring to product teams.
                     </motion.p>
                 </motion.div>
 
@@ -89,28 +133,70 @@ export default function WhyTrustMe() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-6 auto-rows-[minmax(140px,auto)] gap-4"
                 >
-                    {trustFactors.map((factor, index) => (
+                    {tiles.map((tile, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="card p-6 lg:p-8 text-center hover:shadow-xl transition-all duration-300"
+                            className={`card group relative outline-none focus-visible:ring-2 focus-visible:ring-violet-400/70 transition-all duration-300 ${tile.hero ? 'sm:col-span-6 lg:col-span-4 lg:row-span-2' : 'sm:col-span-3 lg:col-span-2'} p-6 lg:p-7 hover:-translate-y-1`}
                         >
-                            <div className="flex justify-center mb-4 lg:mb-6">
-                                {factor.icon}
+                            {tile.hero && (
+                                <>
+                                    {/* Soft blended graphic (innovative, low opacity) */}
+                                    <div className="pointer-events-none absolute inset-0 -z-10 opacity-20">
+                                        <div className="absolute -top-10 -left-16 w-72 h-72 rounded-full blur-3xl" style={{ background: 'radial-gradient(closest-side, rgba(124,58,237,0.20), transparent 70%)' }} />
+                                        <div className="absolute -bottom-10 -right-10 w-72 h-72 rounded-full blur-3xl" style={{ background: 'radial-gradient(closest-side, rgba(20,184,166,0.18), transparent 70%)' }} />
+                                    </div>
+                                    <div className="pointer-events-none absolute inset-0 -z-10 mix-blend-screen opacity-25">
+                                        <Image
+                                            src="/images/portfolio/3d-globe.png"
+                                            alt="abstract graphic"
+                                            fill
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                            style={{ objectFit: 'contain', objectPosition: 'right bottom' }}
+                                            priority={false}
+                                        />
+                                    </div>
+                                </>
+                            )}
+                            <div className="flex items-start justify-between">
+                                <div className="text-white/90">{tile.icon}</div>
+                                <span className="badge" aria-label="metric">
+                                    {tile.metric}
+                                </span>
                             </div>
-                            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 lg:mb-4">{factor.title}</h3>
-                            <p className="text-white/80 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">{factor.description}</p>
-                            <Link
-                                href={factor.link}
-                                className="text-violet-400 hover:text-violet-300 font-medium text-sm transition-colors inline-flex items-center gap-1"
-                            >
-                                Learn more
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </Link>
+                            <h3 className="text-xl font-bold text-white mt-4">{tile.title}</h3>
+                            {tile.description && (
+                                <p className="text-white/80 mt-2 text-sm leading-relaxed">{tile.description}</p>
+                            )}
+                            {tile.hero && (
+                                <>
+                                    <ul className="mt-3 space-y-2 text-white/80 text-sm list-disc list-inside">
+                                        <li>Component architecture, state and data fetching patterns</li>
+                                        <li>Performance: code-splitting, memoization, CWV discipline</li>
+                                        <li>Type-safe tooling: TypeScript, ESLint, testing-ready</li>
+                                    </ul>
+                                    <div className="mt-4 flex flex-wrap gap-2">
+                                        <span className="badge">React</span>
+                                        <span className="badge">TypeScript</span>
+                                        <span className="badge">Next.js</span>
+                                    </div>
+                                </>
+                            )}
+
+                            <div className="mt-5">
+                                <Link
+                                    href={tile.href}
+                                    className="inline-flex items-center gap-1 text-violet-300 hover:text-violet-200 text-sm underline underline-offset-4"
+                                    aria-label={`Learn more: ${tile.anchorText}`}
+                                >
+                                    {tile.anchorText}
+                                    <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </Link>
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

@@ -28,24 +28,20 @@ const itemVariants = {
 
 const faqs = [
     {
-        question: "How do you price frontend development projects?",
-        answer: "I offer transparent hourly rates starting from £35/hour for basic tasks to £60/hour for specialized AI development. Rates vary based on complexity and expertise required. I provide detailed time estimates and transparent billing for all projects."
+        question: "How quickly can you ship an MVP in London?",
+        answer: "Typical MVPs ship in 7–14 days. I scope core flows, build a clickable prototype, and launch a slim production slice on Vercel with auth and analytics where needed."
     },
     {
-        question: "What is your process for React/Next.js web apps?",
-        answer: "My process includes discovery, planning, development with regular check-ins, and launch with support. I specialize in React and Next.js development for UK businesses, ensuring modern, scalable solutions that drive results."
+        question: "Do you build ChatGPT features for small UK businesses?",
+        answer: "Yes. I integrate OpenAI/ChatGPT for onboarding, search, assistants, and automation. I focus on safe prompts, rate-limits, and measurable outcomes (activation, retention)."
     },
     {
-        question: "Do you provide AI integration services for UK businesses?",
-        answer: "Yes, I specialize in ChatGPT API integration and AI solutions for UK startups and agencies. From custom chatbots to content generation systems, I help businesses leverage AI to improve user engagement and automate processes."
+        question: "Can you work as a front-end engineer with product responsibilities?",
+        answer: "Yes. I can own UX flows, define success metrics, and iterate with analytics. I’m hands-on with React/Next.js and comfortable driving product decisions with stakeholders."
     },
     {
-        question: "Can you work with remote teams and international clients?",
-        answer: "Absolutely! I work with remote teams and international clients while being based in London. I'm experienced in collaborative development workflows and can integrate seamlessly with your existing team and processes."
-    },
-    {
-        question: "What makes you different from other freelance frontend developers?",
-        answer: "I combine modern frontend development with AI integration expertise. As a SaaS specialist UK, I understand the unique needs of UK businesses and deliver scalable solutions that grow with your company."
+        question: "How do you handle GDPR and data privacy?",
+        answer: "Data is minimized and region-aware. I use privacy-by-design defaults, avoid storing PII where unnecessary, and document consents. Cookies and analytics follow UK/EU guidance."
     }
 ];
 
@@ -57,7 +53,7 @@ export default function FAQ() {
     };
 
     return (
-        <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
+        <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900" itemScope itemType="https://schema.org/FAQPage">
             <div className="container-wide px-4 py-16 lg:py-24">
                 <motion.div
                     variants={containerVariants}
@@ -93,12 +89,11 @@ export default function FAQ() {
                             variants={itemVariants}
                             className="card cursor-pointer hover:shadow-lg transition-all duration-300"
                             onClick={() => toggleFAQ(index)}
+                            itemScope itemProp="mainEntity" itemType="https://schema.org/Question"
                         >
                             <div className="p-4 lg:p-6">
                                 <div className="flex items-center justify-between">
-                                    <h3 className="text-base sm:text-lg font-bold text-white pr-4">
-                                        {faq.question}
-                                    </h3>
+                                    <h3 className="text-base sm:text-lg font-bold text-white pr-4" itemProp="name">{faq.question}</h3>
                                     <div className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
                                         <svg className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -113,10 +108,9 @@ export default function FAQ() {
                                         exit={{ opacity: 0, height: 0 }}
                                         transition={{ duration: 0.3 }}
                                         className="mt-3 lg:mt-4 pt-3 lg:pt-4 border-t border-slate-700/50"
+                                        itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
                                     >
-                                        <p className="text-white/80 leading-relaxed text-sm sm:text-base">
-                                            {faq.answer}
-                                        </p>
+                                        <p className="text-white/80 leading-relaxed text-sm sm:text-base" itemProp="text">{faq.answer}</p>
                                     </motion.div>
                                 )}
                             </div>

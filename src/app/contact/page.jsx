@@ -6,23 +6,23 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-    title: "Contact Akash Kumar - Frontend Developer & AI Integration Specialist London",
+    title: "Contact Akash Kumar - Frontend & Aspiring Product Engineer, AI Integration Specialist London",
     description: "Get in touch for React, Next.js, and AI integration projects. Free consultation available. UK-based frontend developer for startups and agencies.",
     keywords: [
-        "Contact Frontend Developer",
+        "Contact Frontend & Aspiring Product Engineer",
         "React Developer London",
         "AI Integration Contact",
         "Next.js Developer UK",
         "Web Development Quote",
-        "Frontend Developer Hire",
+        "Frontend & Aspiring Product Engineer Hire",
         "ChatGPT API Developer Contact"
     ],
     openGraph: {
-        title: "Contact Akash Kumar - Frontend Developer & AI Integration Specialist London",
+        title: "Contact Akash Kumar - Frontend & Aspiring Product Engineer, AI Integration Specialist London",
         description: "Get in touch for React, Next.js, and AI integration projects. Free consultation available.",
         type: "website",
         url: "https://akashbuilds.com/contact",
-        siteName: "Akash Kumar - Frontend Developer"
+        siteName: "Akash Kumar - Frontend & Aspiring Product Engineer"
     },
     twitter: {
         card: "summary",
@@ -39,12 +39,12 @@ const contactPageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Akash Kumar",
-    "description": "Contact page for Akash Kumar - Frontend Developer and AI Integration Specialist",
+    "description": "Contact page for Akash Kumar - Frontend & Aspiring Product Engineer and AI Integration Specialist",
     "url": "https://akashbuilds.com/contact",
     "mainEntity": {
         "@type": "Person",
         "name": "Akash Kumar",
-        "jobTitle": "Frontend Developer",
+        "jobTitle": "Front-End Engineer",
         "email": "akashkmr2008@gmail.com",
         "url": "https://akashbuilds.com",
         "address": {

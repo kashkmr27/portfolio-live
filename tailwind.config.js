@@ -8,11 +8,15 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'violet': '#BB86FC',
-                'robin': '#03DAC6',
+                violet: '#7C3AED',
+                'violet-600': '#6D28D9',
+                teal: '#06B6D4',
+                'teal-500': '#14B8A6',
+                'ink-950': '#0B0F1A',
+                'ink-900': '#0F172A',
                 'eerie-black': '#1E1E1E',
-                'gainsboro': '#DDDDDD',
-                'chinese-black': '#121212',
+                gainsboro: '#E5E7EB',
+                'chinese-black': '#0B0F14',
             },
             fontFamily: {
                 'poppins': ['Poppins', 'sans-serif'],

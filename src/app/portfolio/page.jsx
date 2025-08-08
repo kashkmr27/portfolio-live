@@ -73,6 +73,13 @@ export default function PortfolioPage() {
             imageSrc: '/images/case-studies/fintech-card/fintech-dashboard.png',
             caseStudyLink: '/case-studies/ai-integration'
         },
+        {
+            title: 'CryptoAnalysis – Real‑Time Crypto Tracker',
+            summary: 'Real-time markets, personalized watchlists, and interactive charts. Built with React, TypeScript, Firebase, CoinGecko API.',
+            tech: ['React', 'TypeScript', 'Firebase', 'CoinGecko API'],
+            imageSrc: '/images/case-studies/crypto-analysis/real-time-cryptocurrency-tracker-react-dashboard-homepage.png',
+            caseStudyLink: '/case-studies/crypto-analysis'
+        },
     ];
 
     return (
@@ -87,7 +94,7 @@ export default function PortfolioPage() {
                         {/* Hero Content */}
                         <div className="text-center mb-16">
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                                Frontend Developer Portfolio
+                                Frontend & Aspiring Product Engineer Portfolio
                                 <br />
                                 <span className="text-gradient">React, Next.js & AI Projects in the UK</span>
                             </h1>

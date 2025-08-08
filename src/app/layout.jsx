@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google';
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata = {
     metadataBase: new URL('https://akashbuilds.com/'),
@@ -12,10 +12,10 @@ export const metadata = {
             'en-GB': '/',
         },
     },
-    title: "Akash Kumar | Frontend Developer London | React & Next.js Portfolio",
-    description: "Hire a London-based frontend developer specializing in React, Next.js, and TypeScript. View Akash Kumar's portfolio, case studies, and client testimonials.",
+    title: "Akash Kumar | Frontend & Aspiring Product Engineer London | React & Next.js Portfolio",
+    description: "Hire a London-based Frontend & Aspiring Product Engineer specializing in React, Next.js, and TypeScript. View Akash Kumar's portfolio, case studies, and client testimonials.",
     keywords: [
-        "Frontend Developer London",
+        "Frontend & Aspiring Product Engineer London",
         "React Developer UK",
         "Next.js Portfolio",
         "Hire Frontend Engineer London",
@@ -50,7 +50,7 @@ export const metadata = {
         google: "W93f8YxRsmvur4zmKzQhxtn2pR22f5-FWInuiu77pd4",
     },
     openGraph: {
-        title: "Akash Kumar | Frontend Developer London | React & Next.js Portfolio",
+        title: "Akash Kumar | Frontend & Aspiring Product Engineer London | React & Next.js Portfolio",
         description: "React & Next.js specialist in London, UK. Explore projects, case studies, and more.",
         url: 'https://akashbuilds.com/',
         siteName: "Akash Kumar's Portfolio",
@@ -69,7 +69,7 @@ export const metadata = {
         card: 'summary_large_image',
         site: '@YourTwitterHandle',
         creator: '@YourTwitterHandle',
-        title: "Akash Kumar | Frontend Developer London | React & Next.js",
+        title: "Akash Kumar | Frontend & Aspiring Product Engineer London | React & Next.js",
         description: "London-based React & Next.js frontend engineer. Explore projects, UI/UX case studies, and client testimonials.",
         images: ['https://akashbuilds.com/images/hero-image.png'],
     },
@@ -88,7 +88,7 @@ export default function RootLayout({ children }) {
                 <meta name="msapplication-TileColor" content="#7c3aed" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
-                {/* Person Schema */}
+                {/* Person Schema: Front-End Engineer */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
                             "@context": "https://schema.org",
                             "@type": "Person",
                             "name": "Akash Kumar",
-                            "jobTitle": "Frontend Developer",
+                            "jobTitle": "Front-End Engineer",
                             "description": "Professional frontend developer specializing in React, Next.js, and AI integration",
                             "address": {
                                 "@type": "PostalAddress",
@@ -121,7 +121,7 @@ export default function RootLayout({ children }) {
                             ],
                             "worksFor": {
                                 "@type": "Organization",
-                                "name": "Freelance Frontend Developer"
+                                "name": "Freelance Engineering"
                             },
                             "knowsAbout": [
                                 "Frontend Development",
@@ -135,6 +135,31 @@ export default function RootLayout({ children }) {
                     }}
                 />
 
+                {/* Person Schema: Product Engineer / Consultant */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Person",
+                            "name": "Akash Kumar",
+                            "jobTitle": "Product Engineer / Consultant",
+                            "description": "Frontend & Aspiring Product Engineer in London helping teams design UX, ship React/Next.js, and integrate ChatGPT.",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "addressLocality": "London",
+                                "addressRegion": "London",
+                                "addressCountry": "UK"
+                            },
+                            "url": "https://akashbuilds.com",
+                            "sameAs": [
+                                "https://www.linkedin.com/in/theakashkumar",
+                                "https://github.com/akashkumarweb"
+                            ]
+                        })
+                    }}
+                />
+
                 {/* Organization Schema */}
                 <script
                     type="application/ld+json"
@@ -142,22 +167,41 @@ export default function RootLayout({ children }) {
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "Organization",
-                            "name": "Akash Kumar - Frontend Developer",
+                            "name": "Akash Kumar - Frontend & Aspiring Product Engineer",
                             "url": "https://akashbuilds.com",
                             "description": "Professional frontend development services in London, UK",
                             "address": {
                                 "@type": "PostalAddress",
                                 "addressLocality": "London",
+                                "addressRegion": "London",
                                 "addressCountry": "UK"
                             },
                             "contactPoint": {
                                 "@type": "ContactPoint",
                                 "contactType": "customer service",
-                                "email": "contact@akashbuilds.com"
+                                "email": "contact@akashbuilds.com",
+                                "areaServed": "GB",
+                                "availableLanguage": "en-GB"
                             },
                             "sameAs": [
                                 "https://www.linkedin.com/in/theakashkumar",
                                 "https://github.com/akashkumarweb"
+                            ]
+                        })
+                    }}
+                />
+
+                {/* Breadcrumbs (Home › Product Engineer › Services) */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://akashbuilds.com/" },
+                                { "@type": "ListItem", "position": 2, "name": "Product Engineer", "item": "https://akashbuilds.com/services" },
+                                { "@type": "ListItem", "position": 3, "name": "Services", "item": "https://akashbuilds.com/services" }
                             ]
                         })
                     }}
@@ -186,7 +230,11 @@ export default function RootLayout({ children }) {
                     }}
                 />
             </head>
-            <body className={inter.className}>
+            <body className={`${poppins.className} global-surface`}>
+                {/* Decorative organic shapes (non-SEO, non-content) */}
+                <div className="decor-blob decor-blob--violet" style={{ top: '-10vh', left: '-10vw', width: '60vw', height: '60vh' }} />
+                <div className="decor-blob decor-blob--teal" style={{ bottom: '-8vh', right: '-10vw', width: '55vw', height: '55vh' }} />
+
                 {children}
                 <GoogleAnalytics gaId="G-4KVF2Q6Q6V" />
             </body>

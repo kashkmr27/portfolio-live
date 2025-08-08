@@ -46,13 +46,26 @@ const itemVariants = {
 export default function Hero() {
     const controls = useAnimation();
     const [showModal, setShowModal] = useState(false);
+    const [gradientPos, setGradientPos] = useState({ x: 50, y: 50 });
+    const frameRef = useState(null)[0];
 
-    useEffect(() => {
-        controls.start("floating");
-    }, [controls]);
+    // Subtle mouse-reactive gradient (no heavy animation)
+    const handleMouseMove = (e) => {
+        if (frameRef) cancelAnimationFrame(frameRef);
+        const target = e.currentTarget.getBoundingClientRect();
+        const x = ((e.clientX - target.left) / target.width) * 100;
+        const y = ((e.clientY - target.top) / target.height) * 100;
+        requestAnimationFrame(() => setGradientPos({ x, y }));
+    };
 
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
+        <section
+            className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900"
+            onMouseMove={handleMouseMove}
+            style={{
+                backgroundImage: `radial-gradient(600px 300px at ${gradientPos.x}% ${gradientPos.y}%, rgba(124,58,237,0.12), transparent 60%), radial-gradient(500px 260px at ${100 - gradientPos.x}% ${100 - gradientPos.y}%, rgba(20,184,166,0.10), transparent 60%)`
+            }}
+        >
             {/* Subtle Background Pattern */}
             <div className="absolute inset-0 opacity-3">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-violet-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
@@ -69,13 +82,14 @@ export default function Hero() {
                         animate="visible"
                         className="space-y-8 lg:space-y-10 px-4 pt-28 pb-12 lg:pt-32 lg:pb-32"
                     >
-                        {/* Main Headline */}
-                        <motion.div variants={itemVariants} className="space-y-4">
-                            <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                                <span className="text-white">Frontend Developer UK</span>
+                        {/* Overline, H1, Sub-headline */}
+                        <motion.div variants={itemVariants} className="space-y-3">
+                            <p className="uppercase tracking-wide text-xs sm:text-sm text-white/60">Aspiring Product Engineer</p>
+                            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                                <span className="text-white">Product Engineer · React & AI · London</span>
                             </h1>
-                            <p className="text-lg sm:text-xl lg:text-2xl text-violet-200 leading-relaxed">
-                                React, Next.js, AI Integration Specialist, SaaS & Mobile App Developer
+                            <p className="text-lg sm:text-xl text-violet-200 leading-relaxed">
+                                I design, code and grow user-centric products.
                             </p>
                         </motion.div>
 
@@ -87,22 +101,26 @@ export default function Hero() {
                             I help UK startups, agencies, and remote teams build modern, scalable digital solutions.
                         </motion.p>
 
-                        {/* Trust Badges */}
+                        {/* LLM hook (TL;DR) */}
+                        <motion.p
+                            variants={itemVariants}
+                            className="text-sm sm:text-base text-white/80 leading-relaxed max-w-3xl"
+                        >
+                            Akash Kumar is a Frontend & Aspiring Product Engineer in London who designs UX, ships React/Next.js, and integrates ChatGPT for real product outcomes.
+                        </motion.p>
+
+                        {/* KPI chips (keep two) */}
                         <motion.div
                             variants={itemVariants}
                             className="flex flex-wrap gap-3 sm:gap-4 pt-4"
                         >
                             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
                                 <div className="w-2 h-2 sm:w-3 sm:h-3 bg-violet-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-xs sm:text-sm">100% Code Ownership</span>
+                                <span className="text-white/90 font-medium text-xs sm:text-sm">↑41% activation</span>
                             </div>
                             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
                                 <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-xs sm:text-sm">GDPR-Compliant</span>
-                            </div>
-                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
-                                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-xs sm:text-sm">2-Week Support</span>
+                                <span className="text-white/90 font-medium text-xs sm:text-sm">Lighthouse 99</span>
                             </div>
                         </motion.div>
 
@@ -115,7 +133,7 @@ export default function Hero() {
                                 href="/contact"
                                 className="btn btn-primary btn-lg group"
                             >
-                                Start Your Project
+                                Book Product Jam
                                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
@@ -124,7 +142,7 @@ export default function Hero() {
                                 href="/portfolio"
                                 className="btn btn-secondary btn-lg"
                             >
-                                View My Work
+                                See Projects
                             </Link>
                         </motion.div>
                     </motion.div>
@@ -140,7 +158,7 @@ export default function Hero() {
                                 <div className="relative overflow-visible">
                                     <Image
                                         src="/images/akash-kumar.png"
-                                        alt="Akash Kumar - Frontend Developer UK, React and Next.js Specialist"
+                                        alt="Akash Kumar - Frontend & Aspiring Product Engineer UK, React and Next.js Specialist"
                                         width={400}
                                         height={500}
                                         priority
@@ -151,6 +169,13 @@ export default function Hero() {
                                     {/* Subtle gradient overlay to blend with background */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
                                 </div>
+
+                                {/* Faint geometric texture behind avatar */}
+                                <div className="absolute -z-10 -inset-6 rounded-2xl opacity-30"
+                                    style={{
+                                        backgroundImage: `repeating-linear-gradient(45deg, rgba(124,58,237,0.08) 0, rgba(124,58,237,0.08) 2px, transparent 2px, transparent 10px), repeating-linear-gradient(-45deg, rgba(20,184,166,0.06) 0, rgba(20,184,166,0.06) 2px, transparent 2px, transparent 10px)`
+                                    }}
+                                />
 
                                 {/* Floating elements for visual interest */}
                                 <motion.div

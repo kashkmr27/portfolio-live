@@ -7,10 +7,10 @@ import Footer from '../components/Footer';
 
 // SEO-optimized metadata
 export const metadata = {
-    title: "About Akash Kumar - London Frontend Developer & AI Specialist",
+    title: "About Akash Kumar - Frontend & Aspiring Product Engineer London",
     description: "Meet Akash Kumar, a London-based frontend developer with 5+ years experience in React, Next.js, and AI integration. Learn about my approach, skills, and commitment to UK clients.",
     keywords: [
-        "About Frontend Developer London",
+        "About Frontend & Aspiring Product Engineer London",
         "Akash Kumar Developer",
         "React Developer London",
         "Next.js Specialist UK",
@@ -20,11 +20,11 @@ export const metadata = {
         "UK Web Development"
     ],
     openGraph: {
-        title: "About Akash Kumar - London Frontend Developer & AI Specialist",
+        title: "About Akash Kumar - Frontend & Aspiring Product Engineer London",
         description: "Meet Akash Kumar, a London-based frontend developer with 5+ years experience in React, Next.js, and AI integration.",
         type: "website",
         url: "https://akashbuilds.com/about",
-        siteName: "Akash Kumar - Frontend Developer"
+        siteName: "Akash Kumar - Frontend & Aspiring Product Engineer"
     },
     twitter: {
         card: "summary",
@@ -40,7 +40,7 @@ export const metadata = {
 const aboutPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "About Akash Kumar - Frontend Developer",
+    "name": "About Akash Kumar - Frontend & Aspiring Product Engineer",
     "description": "Meet Akash Kumar, a London-based frontend developer with 5+ years experience in React, Next.js, and AI integration.",
     "url": "https://akashbuilds.com/about",
     "mainEntityOfPage": {
@@ -50,7 +50,7 @@ const aboutPageSchema = {
     "author": {
         "@type": "Person",
         "name": "Akash Kumar",
-        "jobTitle": "Frontend Developer",
+        "jobTitle": "Front-End Engineer",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "London",
@@ -58,7 +58,7 @@ const aboutPageSchema = {
         },
         "worksFor": {
             "@type": "Organization",
-            "name": "Freelance Frontend Developer"
+            "name": "Freelance Engineering"
         },
         "knowsAbout": [
             "React",
@@ -82,7 +82,7 @@ const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Akash Kumar",
-    "jobTitle": "Frontend Developer",
+    "jobTitle": "Front-End Engineer",
     "description": "London-based frontend developer specializing in React, Next.js, and AI integration",
     "url": "https://akashbuilds.com",
     "address": {
@@ -104,7 +104,7 @@ const personSchema = {
     ],
     "worksFor": {
         "@type": "Organization",
-        "name": "Freelance Frontend Developer"
+        "name": "Freelance Engineering"
     },
     "sameAs": [
         "https://www.linkedin.com/in/theakashkumar/",

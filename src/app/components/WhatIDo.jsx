@@ -26,54 +26,34 @@ const itemVariants = {
     },
 };
 
-const services = [
+const journeySteps = [
     {
-        icon: "⚛️",
-        title: "Frontend Development",
-        description: "Custom React and Next.js applications built for UK businesses. Modern, responsive web solutions that drive results.",
-        bullets: [
-            "React developer UK expertise with TypeScript and modern tooling",
-            "Next.js applications optimized for performance and SEO",
-            "Responsive design that works across all devices and browsers"
-        ],
-        tags: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-        link: "/services/frontend-development"
+        icon: "🔎",
+        title: "Discover",
+        subtitle: "UX research",
+        outcome: "Validate problem–solution fit through rapid research and stakeholder interviews.",
+        proof: "wireframe snapshot",
     },
     {
         icon: "🎨",
-        title: "UI/UX Design",
-        description: "User-centered design that converts. From wireframes to pixel-perfect interfaces that your users will love.",
-        bullets: [
-            "User experience design focused on conversion and engagement",
-            "Modern UI components built with design systems",
-            "Accessible design that meets WCAG standards"
-        ],
-        tags: ["Figma", "Design Systems", "Prototyping", "Accessibility"],
-        link: "/services"
+        title: "Design",
+        subtitle: "Figma flows",
+        outcome: "Translate insights into clear user flows and interaction patterns in Figma.",
+        proof: "flow diagram",
     },
     {
-        icon: "🤖",
-        title: "AI Integration",
-        description: "ChatGPT API and AI solutions that automate processes and enhance user experience for UK businesses.",
-        bullets: [
-            "ChatGPT API integration for chatbots and content generation",
-            "OpenAI solutions tailored to your business needs",
-            "AI-powered features that improve user engagement"
-        ],
-        tags: ["ChatGPT API", "OpenAI", "AI Integration", "Automation"],
-        link: "/services/ai-integration"
+        icon: "⚛️",
+        title: "Build",
+        subtitle: "React/Next.js",
+        outcome: "Ship accessible, performant React/Next.js features with type‑safe APIs.",
+        proof: "perf chart",
     },
     {
-        icon: "🚀",
-        title: "SaaS Solutions",
-        description: "Scalable SaaS applications built for growth. From MVP to enterprise solutions for UK startups and agencies.",
-        bullets: [
-            "SaaS specialist UK with focus on scalable architecture",
-            "Full-stack solutions with modern tech stack",
-            "Cloud deployment and infrastructure management"
-        ],
-        tags: ["SaaS", "Full-Stack", "Cloud", "Scalability"],
-        link: "/services"
+        icon: "📈",
+        title: "Grow",
+        subtitle: "analytics + AI",
+        outcome: "Instrument analytics and integrate AI to improve activation and retention.",
+        proof: "funnel snapshot",
     }
 ];
 
@@ -102,58 +82,46 @@ export default function WhatIDo() {
                     </motion.p>
                 </motion.div>
 
-                <motion.div
+                <motion.ol
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+                    className="relative max-w-3xl mx-auto border-l border-white/10 pl-6"
                 >
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
+                    {journeySteps.map((step, index) => (
+                        <motion.li
+                            key={step.title}
                             variants={itemVariants}
-                            className="card p-6 lg:p-8 hover:shadow-xl transition-all duration-300"
+                            className="relative py-6"
                         >
-                            <div className="text-3xl lg:text-4xl mb-4">{service.icon}</div>
-                            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 lg:mb-4">{service.title}</h3>
-                            <p className="text-white/80 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">{service.description}</p>
-
-                            {/* SEO-optimized bullet points */}
-                            <div className="mb-4 lg:mb-6">
-                                <ul className="space-y-2">
-                                    {service.bullets.map((bullet, bulletIndex) => (
-                                        <li key={bulletIndex} className="flex items-start gap-2 text-white/80 text-xs sm:text-sm">
-                                            <span className="text-violet-400 mt-1">•</span>
-                                            <span>{bullet}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <span className="absolute -left-2 top-7 w-3 h-3 rounded-full bg-violet-400 ring-4 ring-violet-400/20" aria-hidden></span>
+                            <div className="flex items-start gap-4">
+                                <div className="shrink-0 w-10 h-10 rounded-full bg-white/5 border border-white/10 text-violet-300 grid place-items-center text-base font-semibold">
+                                    {step.icon}
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-white font-semibold mb-1">{step.title} <span className="text-white/60">— {step.subtitle}</span></h3>
+                                    <p className="text-white/80 text-sm leading-relaxed">{step.outcome}</p>
+                                    <div className="mt-2 inline-flex items-center gap-2 text-xs text-white/70 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                        <span className="w-1.5 h-1.5 bg-teal-400 rounded-full" />
+                                        {step.proof}
+                                    </div>
+                                </div>
                             </div>
-
-                            {/* Technology Tags */}
-                            <div className="flex flex-wrap gap-2 mb-4 lg:mb-6">
-                                {service.tags.map((tag, tagIndex) => (
-                                    <span
-                                        key={tagIndex}
-                                        className="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-full border border-violet-500/30"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <Link
-                                href={service.link}
-                                className="text-violet-400 hover:text-violet-300 font-medium text-sm transition-colors inline-flex items-center gap-1"
-                            >
-                                Learn More
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </Link>
-                        </motion.div>
+                        </motion.li>
                     ))}
+                </motion.ol>
+
+                {/* Seal */}
+                <motion.div
+                    variants={itemVariants}
+                    className="mt-8 flex justify-center"
+                >
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-200 text-sm font-medium">
+                        <span className="w-2 h-2 rounded-full bg-violet-400" />
+                        Now: Frontend & Aspiring Product Engineer
+                    </div>
                 </motion.div>
             </div>
         </section>
