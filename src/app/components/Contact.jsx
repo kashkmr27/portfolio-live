@@ -67,7 +67,7 @@ const Contact = () => {
                 initial="hidden"
                 animate="visible"
             >
-                <div className="container-wide px-4 py-16 lg:py-24">
+                <div className="container-wide px-4 py-20 md:py-24 lg:py-28">
                     <div className="text-center mb-8 lg:mb-12">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-bold mb-3 lg:mb-4">Contact Me</h2>
                         <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
