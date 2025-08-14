@@ -562,6 +562,18 @@ p {
   }
 }
 
+/* Ensure mobile/tablet spacing is applied to inner divs if section padding is ineffective */
+@media (max-width: 1024px) {
+
+  .section>.container,
+  .section>.container-wide,
+  section>.container,
+  section>.container-wide {
+    padding-top: var(--space-12) !important;
+    padding-bottom: var(--space-12) !important;
+  }
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
   from {
