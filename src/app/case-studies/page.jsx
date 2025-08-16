@@ -116,7 +116,7 @@ export default function CaseStudies() {
 
 
                         {/* Hero Content */}
-                        <div className="text-center mb-16">
+                        <div className="text-center">
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
                                 Case Studies: <span className="text-gradient">High-Impact Digital Solutions</span>
                             </h1>

@@ -45,7 +45,7 @@ const contactPageSchema = {
         "@type": "Person",
         "name": "Akash Kumar",
         "jobTitle": "Front-End Engineer",
-        "email": "akashkmr2008@gmail.com",
+        "email": "akash@akashbuilds.com",
         "url": "https://akashbuilds.com",
         "address": {
             "@type": "PostalAddress",
@@ -160,10 +160,10 @@ export default function ContactPage() {
                                 <h3 className="text-xl font-bold text-white mb-4">Email</h3>
                                 <p className="text-white/80 mb-4">Direct communication for project inquiries</p>
                                 <a
-                                    href="mailto:akashkmr2008@gmail.com"
+                                    href="mailto:contact@akashbuilds.com"
                                     className="text-violet-400 hover:text-violet-300 transition-colors font-medium"
                                 >
-                                    akashkmr2008@gmail.com
+                                    contact@akashbuilds.com
                                 </a>
                             </div>
 

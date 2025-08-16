@@ -565,6 +565,10 @@ p {
 /* Ensure mobile/tablet spacing is applied to inner divs if section padding is ineffective */
 @media (max-width: 1024px) {
 
+  section>.container-wide.hero-container {
+    padding-bottom: 0 !important;
+  }
+
   .section>.container,
   .section>.container-wide,
   section>.container,

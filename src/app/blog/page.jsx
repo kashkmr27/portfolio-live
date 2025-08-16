@@ -167,7 +167,7 @@ export default async function BlogPage() {
 
             <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
                 {/* Hero Section */}
-                <section className="container mx-auto px-4 pt-16 lg:pt-24">
+                <section className="space-y-8 lg:space-y-10 px-4 pt-28 pb-12 lg:pt-32 lg:pb-0">
                     <div className="max-w-4xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                             Insights, Tutorials & blogs

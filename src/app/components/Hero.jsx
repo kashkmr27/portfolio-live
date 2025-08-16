@@ -73,7 +73,7 @@ export default function Hero() {
                 <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-4000"></div>
             </div>
 
-            <div className="container-wide relative z-10">
+            <div className="container-wide relative z-10 hero-container">
                 <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
                     {/* Content Column */}
                     <motion.div
@@ -150,7 +150,7 @@ export default function Hero() {
                     {/* Image Column */}
                     <motion.div
                         variants={itemVariants}
-                        className="flex justify-center lg:justify-end self-end px-4 pt-8 pb-8 lg:pt-0 lg:pb-0"
+                        className="flex justify-center lg:justify-end self-end px-4 pt-8"
                     >
                         <div className="relative">
                             {/* Main Image Container */}

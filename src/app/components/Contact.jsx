@@ -61,7 +61,7 @@ const boxVariants = {
 const Contact = () => {
     return (
         <div className="dark" id='contact'>
-            <motion.div
+            <motion.section
                 className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900 flex flex-col justify-center items-center"
                 variants={containerVariants}
                 initial="hidden"
@@ -99,7 +99,7 @@ const Contact = () => {
                         ))}
                     </motion.div>
                 </div>
-            </motion.div>
+            </motion.section>
         </div>
     );
 };
