@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
                 <meta name="theme-color" content="#7c3aed" />
                 <meta name="msapplication-TileColor" content="#7c3aed" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-
+                <meta name="p:domain_verify" content="30566e8fbedf65b5b02c3cd1abb09d03" />
                 {/* Person Schema: Front-End Engineer */}
                 <script
                     type="application/ld+json"
