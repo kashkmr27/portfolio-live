@@ -13,9 +13,9 @@ export default function Footer() {
                                 <Image
                                     src="/images/Akash Kumar.png"
                                     alt="Akash Kumar - Frontend & Aspiring Product Engineer"
-                                    width={120}
-                                    height={36}
-                                    className="h-8 w-auto"
+                                    width={140}
+                                    height={42}
+                                    className="h-10 w-auto"
                                 />
                             </Link>
                             <p className="text-white/70 max-w-md">

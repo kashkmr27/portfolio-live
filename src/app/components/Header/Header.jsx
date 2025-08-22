@@ -173,9 +173,9 @@ const Header = () => {
                     <Image
                         src={'/images/Akash Kumar.png'}
                         alt="Akash Kumar - Frontend & Aspiring Product Engineer"
-                        width={120}
-                        height={36}
-                        className="h-9 w-auto drop-shadow-[0_4px_16px_rgba(124,58,237,0.25)]"
+                        width={150}
+                        height={45}
+                        className="h-12 w-auto drop-shadow-[0_4px_16px_rgba(124,58,237,0.25)]"
                     />
                 </Link>
 
@@ -230,9 +230,9 @@ const Header = () => {
                                 <Image
                                     src={'/images/Akash Kumar.png'}
                                     alt="Akash Kumar - Frontend & Aspiring Product Engineer"
-                                    width={100}
-                                    height={30}
-                                    className="h-8 w-auto"
+                                    width={120}
+                                    height={36}
+                                    className="h-10 w-auto"
                                 />
                             </Link>
                         </div>

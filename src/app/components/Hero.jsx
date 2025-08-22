@@ -157,7 +157,7 @@ export default function Hero() {
                             <div className="relative flex items-end">
                                 <div className="relative overflow-visible">
                                     <Image
-                                        src="/images/Akash Kumar.png"
+                                        src="/images/akash-kumar.png"
                                         alt="Akash Kumar - Frontend & Aspiring Product Engineer UK, React and Next.js Specialist"
                                         width={400}
                                         height={500}
