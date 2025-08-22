@@ -39,7 +39,11 @@ function processContentImages(content) {
  */
 export async function fetchBlogPosts() {
     try {
-        const response = await fetch(`${WORDPRESS_API_URL}/posts?per_page=10&_embed`);
+        // Add cache-busting parameter to ensure fresh data
+        const timestamp = Date.now();
+        const response = await fetch(`${WORDPRESS_API_URL}/posts?per_page=10&_embed&_t=${timestamp}`, {
+            next: { revalidate: 300 } // Revalidate every 5 minutes
+        });
         const posts = await response.json();
 
         return posts.map(post => ({
@@ -68,7 +72,9 @@ export async function fetchBlogPosts() {
  */
 export async function fetchBlogPost(slug) {
     try {
-        const response = await fetch(`${WORDPRESS_API_URL}/posts?slug=${slug}&_embed`);
+        const response = await fetch(`${WORDPRESS_API_URL}/posts?slug=${slug}&_embed`, {
+            next: { revalidate: 300 } // Revalidate every 5 minutes
+        });
         const posts = await response.json();
 
         if (posts.length === 0) {

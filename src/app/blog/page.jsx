@@ -58,6 +58,9 @@ export const metadata = {
     },
 };
 
+// Force revalidation every 5 minutes
+export const revalidate = 300;
+
 export default async function BlogPage() {
     // Fetch blog posts from WordPress
     const blogPosts = await fetchBlogPosts();
