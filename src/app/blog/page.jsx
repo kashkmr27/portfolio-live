@@ -140,7 +140,7 @@ export default async function BlogPage() {
                 "url": "https://akashbuilds.com",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://akashbuilds.com/logo.png",
+                    "url": "https://akashbuilds.com/images/Akash%20Kumar.png",
                     "width": 512,
                     "height": 512
                 },

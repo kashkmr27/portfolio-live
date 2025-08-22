@@ -1,5 +1,5 @@
 {
-  "name": "Akash Kumar - Frontend Developer UK",
+  "name": "Akash Kumar - Frontend & Aspiring Product Engineer",
   "short_name": "Akash Kumar",
   "description": "Professional frontend developer specializing in React, Next.js, and AI integration services in London, UK",
   "start_url": "/",
@@ -20,13 +20,13 @@
       "purpose": "any"
     },
     {
-      "src": "/images/logos/webdevakash.png",
+      "src": "/images/Akash Kumar.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/logos/webdevakash.png",
+      "src": "/images/Akash Kumar.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

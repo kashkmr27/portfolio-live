@@ -31,7 +31,7 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                     "name": "Akash Kumar - Frontend & Aspiring Product Engineer",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://akashbuilds.com/logo.png"
+                        "url": "https://akashbuilds.com/images/Akash%20Kumar.png"
                     },
                     "url": "https://akashbuilds.com"
                 },
@@ -76,7 +76,7 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                 "url": "https://akashbuilds.com",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://akashbuilds.com/logo.png",
+                    "url": "https://akashbuilds.com/images/Akash%20Kumar.png",
                     "width": 512,
                     "height": 512
                 },

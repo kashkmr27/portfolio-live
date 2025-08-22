@@ -171,8 +171,8 @@ const Header = () => {
                 {/* Logo */}
                 <Link href="/" id="logo" className="flex items-center" onClick={() => setActive(false)}>
                     <Image
-                        src={'/images/webdevakash.webp'}
-                        alt="Akash Kumar - Web developer and designer"
+                        src={'/images/Akash Kumar.png'}
+                        alt="Akash Kumar - Frontend & Aspiring Product Engineer"
                         width={120}
                         height={36}
                         className="h-9 w-auto drop-shadow-[0_4px_16px_rgba(124,58,237,0.25)]"
@@ -228,8 +228,8 @@ const Header = () => {
                         <div className="mb-12">
                             <Link href="/" onClick={() => setActive(false)}>
                                 <Image
-                                    src={'/images/webdevakash.webp'}
-                                    alt="Akash Kumar"
+                                    src={'/images/Akash Kumar.png'}
+                                    alt="Akash Kumar - Frontend & Aspiring Product Engineer"
                                     width={100}
                                     height={30}
                                     className="h-8 w-auto"
