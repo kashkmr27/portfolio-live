@@ -93,7 +93,7 @@ const SkillsTechnologies = () => {
                             >
                                 {group.label}
                             </motion.h3>
-                            <div className="flex flex-wrap justify-center gap-2">
+                            <div className="flex flex-wrap justify-center gap-2" role="list">
                                 {group.items.map((item) => (
                                     <span
                                         key={item.name}
