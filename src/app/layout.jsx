@@ -50,8 +50,8 @@ export const metadata = {
         google: "W93f8YxRsmvur4zmKzQhxtn2pR22f5-FWInuiu77pd4",
     },
     openGraph: {
-        title: "Akash Kumar | Frontend & Aspiring Product Engineer London | React & Next.js Portfolio",
-        description: "React & Next.js specialist in London, UK. Explore projects, case studies, and more.",
+        title: "Akash Kumar | Frontend Developer London | React & Next.js",
+        description: "London-based frontend & aspiring product engineer—React, Next.js, TypeScript. Explore Akash Kumar portfolio, case studies and client testimonials.",
         url: 'https://akashbuilds.com/',
         siteName: "Akash Kumar's Portfolio",
         images: [
