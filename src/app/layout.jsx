@@ -12,8 +12,8 @@ export const metadata = {
             'en-GB': '/',
         },
     },
-    title: "Akash Kumar | Frontend & Aspiring Product Engineer London | React & Next.js Portfolio",
-    description: "Hire a London-based Frontend & Aspiring Product Engineer specializing in React, Next.js, and TypeScript. View Akash Kumar's portfolio, case studies, and client testimonials.",
+    title: "Akash Kumar | Frontend Developer London | React & Next.js",
+    description: "London-based React & Next.js frontend engineer. Explore projects, UI/UX case studies, and client testimonials.",
     keywords: [
         "Frontend & Aspiring Product Engineer London",
         "React Developer UK",
