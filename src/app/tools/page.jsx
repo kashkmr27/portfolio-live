@@ -5,14 +5,7 @@ import Footer from '../components/Footer';
 export const metadata = {
     title: "Developer Tools - AI Sanitizer & Testing Utilities",
     description: "Free developer tools for AI testing, data sanitization, and ChatGPT API development. GDPR-compliant utilities for safe development.",
-    keywords: [
-        "Developer Tools",
-        "AI Testing Tools",
-        "Data Sanitization",
-        "ChatGPT API Tools",
-        "GDPR Compliance Tools",
-        "Free Developer Utilities"
-    ],
+
     openGraph: {
         title: "Developer Tools - AI Sanitizer & Testing Utilities",
         description: "Free developer tools for AI testing, data sanitization, and ChatGPT API development.",

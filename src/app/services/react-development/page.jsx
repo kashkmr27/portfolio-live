@@ -8,15 +8,7 @@ import Footer from '../../components/Footer';
 export const metadata = {
     title: "React Development Services - Custom React Applications & Components",
     description: "Professional React development services. Custom React applications, components, and libraries. Scalable, maintainable code with modern development practices.",
-    keywords: [
-        "React Development Services",
-        "React Developer UK",
-        "Custom React Applications",
-        "React Components",
-        "React Libraries",
-        "React Development London",
-        "React Developer"
-    ],
+
     openGraph: {
         title: "React Development Services - Custom React Applications & Components",
         description: "Professional React development services. Custom React applications, components, and libraries.",

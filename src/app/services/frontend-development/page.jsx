@@ -9,16 +9,7 @@ import Footer from '../../components/Footer';
 export const metadata = {
     title: "Frontend Development Services - React, Next.js & TypeScript London",
     description: "Professional frontend development services in London. React, Next.js, TypeScript, and modern web development. Get a free consultation for your project.",
-    keywords: [
-        "Frontend Development London",
-        "React Development UK",
-        "Next.js Development",
-        "TypeScript Development",
-        "Web Development London",
-        "Frontend Engineer London",
-        "React Developer UK",
-        "Modern Web Development"
-    ],
+
     openGraph: {
         title: "Frontend Development Services - React, Next.js & TypeScript London",
         description: "Professional frontend development services in London. React, Next.js, TypeScript, and modern web development.",

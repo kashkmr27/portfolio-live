@@ -9,16 +9,7 @@ import Footer from '../components/Footer';
 export const metadata = {
     title: "Web Development Services - Frontend, AI Integration & React Development London",
     description: "Professional web development services in London: React, Next.js, AI integration, ChatGPT API, web animation, and frontend development. Get a free consultation.",
-    keywords: [
-        "Web Development Services London",
-        "Frontend Development UK",
-        "React Development London",
-        "AI Integration Services",
-        "ChatGPT API Development",
-        "Web Animation London",
-        "Next.js Development UK",
-        "Custom Web Applications"
-    ],
+
     openGraph: {
         title: "Web Development Services - Frontend, AI Integration & React Development London",
         description: "Professional web development services in London: React, Next.js, AI integration, ChatGPT API, web animation, and frontend development.",

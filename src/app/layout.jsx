@@ -14,19 +14,7 @@ export const metadata = {
     },
     title: "Akash Kumar | Frontend Developer London | React & Next.js",
     description: "London-based React & Next.js frontend engineer. Explore projects, UI/UX case studies, and client testimonials.",
-    keywords: [
-        "Frontend & Aspiring Product Engineer London",
-        "React Developer UK",
-        "Next.js Portfolio",
-        "Hire Frontend Engineer London",
-        "JavaScript Developer London",
-        "UI UX Designer London",
-        "TypeScript Developer London",
-        "Freelance Web Developer London",
-        "AI Integration Developer",
-        "ChatGPT API Developer",
-        "Web Animation Services"
-    ],
+
     authors: [{ name: "Akash Kumar" }],
     creator: "Akash Kumar",
     publisher: "Akash Kumar",

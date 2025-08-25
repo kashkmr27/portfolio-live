@@ -8,14 +8,7 @@ import Footer from '../../components/Footer';
 export const metadata = {
     title: "Web Animation Services - Engaging Animations & Micro-interactions",
     description: "Professional web animation services using Framer Motion and CSS. Create engaging animations and micro-interactions that enhance user experience.",
-    keywords: [
-        "Web Animation Services",
-        "Framer Motion",
-        "CSS Animations",
-        "Micro-interactions",
-        "Web Animation London",
-        "Animation Developer UK"
-    ],
+
     openGraph: {
         title: "Web Animation Services - Engaging Animations & Micro-interactions",
         description: "Professional web animation services using Framer Motion and CSS. Create engaging animations and micro-interactions.",

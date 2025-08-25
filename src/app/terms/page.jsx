@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 export const metadata = {
     title: "Terms of Service – Akash Kumar | Frontend Developer UK",
     description: "Review the Terms of Service for using Akash Kumar's website and digital services. Clear, UK-compliant terms for all site visitors and clients.",
-    keywords: "Terms of Service, legal terms, UK frontend developer, web development terms, AI integration terms, freelance developer terms",
+
     openGraph: {
         title: "Terms of Service – Akash Kumar | Frontend Developer UK",
         description: "Review the Terms of Service for using Akash Kumar's website and digital services. Clear, UK-compliant terms for all site visitors and clients.",

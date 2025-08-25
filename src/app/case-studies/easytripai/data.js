@@ -2,18 +2,7 @@ export const easytripaiData = {
     // SEO & Meta
     title: "Case Study: AI Trip Planner for Travel Tech Startup – Live MVP with Real User Traction",
     description: "How I built EasyTripAI.com—an AI-powered travel planner that delivers personalized itineraries, hidden gems, and real-time mapping. Next.js, OpenAI, MapTiler. Real results from London frontend developer.",
-    keywords: [
-        "Frontend Developer London",
-        "AI Trip Planner Case Study",
-        "Next.js Developer UK",
-        "OpenAI Developer London",
-        "Travel Tech Development",
-        "AI Integration Case Study",
-        "React Developer London",
-        "Web Development Portfolio",
-        "AI Travel Planning",
-        "Personalized Itineraries"
-    ],
+
     openGraph: {
         title: "AI Trip Planner Case Study | Frontend Developer London",
         description: "Real results from building EasyTripAI.com - AI-powered travel planning with Next.js and OpenAI. See how I deliver business impact.",

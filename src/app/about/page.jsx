@@ -9,16 +9,7 @@ import Footer from '../components/Footer';
 export const metadata = {
     title: "About Akash Kumar - Frontend & Aspiring Product Engineer London",
     description: "Meet Akash Kumar, a London-based frontend developer with 5+ years experience in React, Next.js, and AI integration. Learn about my approach, skills, and commitment to UK clients.",
-    keywords: [
-        "About Frontend & Aspiring Product Engineer London",
-        "Akash Kumar Developer",
-        "React Developer London",
-        "Next.js Specialist UK",
-        "AI Integration Developer",
-        "London Web Developer",
-        "Frontend Engineer London",
-        "UK Web Development"
-    ],
+
     openGraph: {
         title: "About Akash Kumar - Frontend & Aspiring Product Engineer London",
         description: "Meet Akash Kumar, a London-based frontend developer with 5+ years experience in React, Next.js, and AI integration.",

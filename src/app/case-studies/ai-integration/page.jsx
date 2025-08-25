@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 export const metadata = {
     title: "AI Integration for UK FinTech — Boosted User Retention by 30% | React + Next.js",
     description: "How I built an AI-powered customer service chatbot for a UK FinTech startup using OpenAI GPT-4. Next.js, TypeScript, real-time processing. 30% boost in user retention, 50% faster support resolution.",
-    keywords: "AI Integration Case Study, ChatGPT API Developer UK, Frontend Developer London, OpenAI Integration, FinTech Development, Customer Service AI, Next.js Developer, TypeScript Developer, AI Chatbot Development, UK Web Developer",
+
     openGraph: {
         title: "AI Integration for UK FinTech — Boosted User Retention by 30%",
         description: "How I built an AI-powered customer service chatbot for a UK FinTech startup using OpenAI GPT-4. Real-time processing, intelligent responses.",

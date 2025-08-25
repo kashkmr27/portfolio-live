@@ -9,16 +9,7 @@ import NewsletterSubscription from '../components/NewsletterSubscription';
 export const metadata = {
     title: "Insights & Tutorials - AI, Automation & Digital Growth for UK Small Businesses",
     description: "Expert insights on AI integration, automation, and digital growth strategies for UK small businesses. Learn from real case studies and practical tutorials.",
-    keywords: [
-        "AI tutorials UK",
-        "Small business automation",
-        "Digital growth strategies",
-        "UK business insights",
-        "AI chatbot setup",
-        "Business automation tips",
-        "AI integration services",
-        "UK small business technology"
-    ],
+
     authors: [{ name: 'Akash Kumar' }],
     openGraph: {
         title: "Insights & Tutorials - AI, Automation & Digital Growth for UK Small Businesses",

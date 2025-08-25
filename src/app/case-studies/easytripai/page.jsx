@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 export const metadata = {
     title: "AI-Powered Travel Planner for UK Startups | React + Next.js",
     description: "How I built EasyTripAI.com—an AI-powered travel planner that delivers personalized itineraries, hidden gems, and real-time mapping. Next.js, OpenAI, MapTiler. Real results from London frontend developer.",
-    keywords: "AI travel planner, React developer UK, Next.js development, OpenAI integration, UK startup, frontend developer London",
+
     openGraph: {
         title: "AI-Powered Travel Planner for UK Startups | React + Next.js",
         description: "How I built EasyTripAI.com—an AI-powered travel planner that delivers personalized itineraries, hidden gems, and real-time mapping.",

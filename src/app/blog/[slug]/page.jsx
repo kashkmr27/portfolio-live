@@ -23,16 +23,7 @@ export async function generateMetadata({ params }) {
     return {
         title: `${post.title} - AI Integration Insights | Akash Kumar`,
         description: cleanExcerpt,
-        keywords: [
-            "AI chatbot setup UK",
-            "Small business automation",
-            "No-code AI solutions",
-            "UK business chatbot",
-            "GDPR compliant AI",
-            "Business automation guide",
-            "AI integration services",
-            "UK small business technology"
-        ],
+
         authors: [{ name: 'Akash Kumar' }],
         openGraph: {
             title: post.title,

@@ -9,18 +9,7 @@ import Footer from '../../components/Footer';
 export const metadata = {
     title: "AI Integration Developer UK | ChatGPT API & Custom AI Solutions",
     description: "Hire a UK-based AI integration specialist for ChatGPT API implementations, custom AI features, and AI-powered web applications. Free consultation available.",
-    keywords: [
-        "AI Integration Developer",
-        "ChatGPT API Developer",
-        "Custom AI Solutions UK",
-        "OpenAI Integration Expert",
-        "AI Web Development",
-        "ChatGPT Implementation Service",
-        "AI Developer UK",
-        "AI for Startups",
-        "Travel AI Developer",
-        "Real-time AI Processing"
-    ],
+
     openGraph: {
         title: "AI Integration Services UK | ChatGPT API & Custom AI Development",
         description: "Expert AI integration services for UK businesses. Specializing in ChatGPT API, custom AI features, and AI-powered web applications.",

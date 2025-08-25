@@ -7,16 +7,7 @@ import TrustBadgeGrid from '../components/TrustBadgeGrid';
 export const metadata = {
     title: "Case Studies | Frontend & Aspiring Product Engineer London | Akash Kumar | AI, FinTech & Digital Solutions",
     description: "Explore detailed case studies of high-impact digital solutions by London frontend developer Akash Kumar. AI travel planning, FinTech onboarding, digital transformation. Real results, proven expertise.",
-    keywords: [
-        "Frontend & Aspiring Product Engineer London",
-        "Case Studies",
-        "AI Developer UK",
-        "FinTech Developer",
-        "Next.js Developer",
-        "React Developer London",
-        "Digital Transformation",
-        "Web Development Portfolio"
-    ],
+
     openGraph: {
         title: "Case Studies | Frontend & Aspiring Product Engineer London | Akash Kumar",
         description: "Real results from AI travel planning, FinTech onboarding, and digital transformation projects. See how I deliver business impact.",

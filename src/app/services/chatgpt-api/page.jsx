@@ -8,15 +8,7 @@ import Footer from '../../components/Footer';
 export const metadata = {
     title: "ChatGPT API Development Services - Custom AI Chatbots & Content Generation",
     description: "Specialized ChatGPT API development services. Custom chatbots, content generation, and AI-powered features. UK-based developer with proven results.",
-    keywords: [
-        "ChatGPT API Developer",
-        "Custom Chatbots",
-        "AI Content Generation",
-        "OpenAI Integration",
-        "ChatGPT Implementation",
-        "AI Developer UK",
-        "Chatbot Development"
-    ],
+
     openGraph: {
         title: "ChatGPT API Development Services - Custom AI Chatbots & Content Generation",
         description: "Specialized ChatGPT API development services. Custom chatbots, content generation, and AI-powered features.",

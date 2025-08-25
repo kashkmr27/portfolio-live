@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 export const metadata = {
     title: "Privacy Policy – Akash Kumar | London Frontend Developer & AI Specialist",
     description: "Read our Privacy Policy to learn how we collect, use, and protect your data on Akash Kumar's website. GDPR-compliant and UK/EU privacy standards.",
-    keywords: "Privacy Policy, GDPR compliance, data protection, UK frontend developer, London web developer, AI specialist privacy",
+
     openGraph: {
         title: "Privacy Policy – Akash Kumar | London Frontend Developer & AI Specialist",
         description: "Read our Privacy Policy to learn how we collect, use, and protect your data on Akash Kumar's website. GDPR-compliant and UK/EU privacy standards.",

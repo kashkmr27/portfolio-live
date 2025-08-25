@@ -8,15 +8,7 @@ import Footer from '../components/Footer';
 export const metadata = {
     title: "Contact Akash Kumar - Frontend & Aspiring Product Engineer, AI Integration Specialist London",
     description: "Get in touch for React, Next.js, and AI integration projects. Free consultation available. UK-based frontend developer for startups and agencies.",
-    keywords: [
-        "Contact Frontend & Aspiring Product Engineer",
-        "React Developer London",
-        "AI Integration Contact",
-        "Next.js Developer UK",
-        "Web Development Quote",
-        "Frontend & Aspiring Product Engineer Hire",
-        "ChatGPT API Developer Contact"
-    ],
+
     openGraph: {
         title: "Contact Akash Kumar - Frontend & Aspiring Product Engineer, AI Integration Specialist London",
         description: "Get in touch for React, Next.js, and AI integration projects. Free consultation available.",

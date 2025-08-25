@@ -40,7 +40,7 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                     "@id": `https://akashbuilds.com/blog/${post.slug}`
                 },
                 "articleSection": "AI Integration & Automation",
-                "keywords": "AI chatbot setup UK, Small business automation, No-code AI solutions, UK business chatbot, GDPR compliant AI, Business automation guide",
+
                 "wordCount": post.content.replace(/<[^>]*>/g, '').split(' ').length,
                 "timeRequired": "PT5M",
                 "inLanguage": "en-GB"
