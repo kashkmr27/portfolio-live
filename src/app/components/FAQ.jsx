@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Script from 'next/script';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -37,13 +38,27 @@ const faqs = [
     },
     {
         question: "Can you work as a front-end engineer with product responsibilities?",
-        answer: "Yes. I can own UX flows, define success metrics, and iterate with analytics. I’m hands-on with React/Next.js and comfortable driving product decisions with stakeholders."
+        answer: "Yes. I can own UX flows, define success metrics, and iterate with analytics. I'm hands-on with React/Next.js and comfortable driving product decisions with stakeholders."
     },
     {
         question: "How do you handle GDPR and data privacy?",
         answer: "Data is minimized and region-aware. I use privacy-by-design defaults, avoid storing PII where unnecessary, and document consents. Cookies and analytics follow UK/EU guidance."
     }
 ];
+
+// FAQ Schema for JSON-LD
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+        }
+    }))
+};
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -54,6 +69,15 @@ export default function FAQ() {
 
     return (
         <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900" itemScope itemType="https://schema.org/FAQPage">
+            {/* JSON-LD Structured Data */}
+            <Script
+                id="faq-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(faqSchema)
+                }}
+            />
+            
             <div className="container-wide px-4 py-16 lg:py-24">
                 <motion.div
                     variants={containerVariants}
@@ -101,18 +125,15 @@ export default function FAQ() {
                                     </div>
                                 </div>
 
-                                {openIndex === index && (
-                                    <motion.div
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: "auto" }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="mt-3 lg:mt-4 pt-3 lg:pt-4 border-t border-slate-700/50"
-                                        itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-                                    >
-                                        <p className="text-white/80 leading-relaxed text-sm sm:text-base" itemProp="text">{faq.answer}</p>
-                                    </motion.div>
-                                )}
+                                {/* Always render the answer for SEO, but hide it visually when collapsed */}
+                                <div 
+                                    className={`mt-3 lg:mt-4 pt-3 lg:pt-4 border-t border-slate-700/50 transition-all duration-300 ${
+                                        openIndex === index ? 'block opacity-100' : 'hidden opacity-0'
+                                    }`}
+                                    itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
+                                >
+                                    <p className="text-white/80 leading-relaxed text-sm sm:text-base" itemProp="text">{faq.answer}</p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
