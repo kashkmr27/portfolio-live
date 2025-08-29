@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
@@ -12,8 +13,8 @@ export const metadata = {
             'en-GB': '/',
         },
     },
-    title: "Akash Kumar | Frontend Developer London | React & Next.js",
-    description: "London-based React & Next.js frontend engineer. Explore projects, UI/UX case studies, and client testimonials.",
+    title: "Akash Kumar | Frontend Developer London | React ",
+    description: "Product-focused Frontend Engineer in London with expertise in React & Next.js. Discover projects, UI/UX case studies, client testimonials, and AI-driven solutions.",
 
     authors: [{ name: "Akash Kumar" }],
     creator: "Akash Kumar",
@@ -36,6 +37,8 @@ export const metadata = {
     },
     verification: {
         google: "W93f8YxRsmvur4zmKzQhxtn2pR22f5-FWInuiu77pd4",
+        yandex: "your-yandex-verification",
+        bing: "your-bing-verification",
     },
     openGraph: {
         title: "Akash Kumar | Frontend Developer London | React & Next.js",
@@ -63,6 +66,8 @@ export const metadata = {
     },
     other: {
         "google-site-verification": "W93f8YxRsmvur4zmKzQhxtn2pR22f5-FWInuiu77pd4",
+        "msvalidate.01": "your-bing-verification",
+        "yandex-verification": "your-yandex-verification",
     }
 };
 
@@ -70,6 +75,21 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en-GB">
             <head>
+                {/* Google Tag Manager */}
+                <Script
+                    id="gtm-script"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                            })(window,document,'script','dataLayer','GTM-XXXXXXX');
+                        `,
+                    }}
+                />
+
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="icon" type="image/svg+xml" href="/favicon-ak.svg" />
                 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
@@ -79,6 +99,7 @@ export default function RootLayout({ children }) {
                 <meta name="msapplication-TileColor" content="#7c3aed" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
                 <meta name="p:domain_verify" content="30566e8fbedf65b5b02c3cd1abb09d03" />
+
                 {/* Person Schema: Front-End Engineer */}
                 <script
                     type="application/ld+json"
@@ -222,7 +243,16 @@ export default function RootLayout({ children }) {
                 />
             </head>
             <body className={`${poppins.className} global-surface`}>
-                {/* Decorative organic shapes (non-SEO, non-content) */}
+                {/* Google Tag Manager (noscript) */}
+                <noscript>
+                    <iframe
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+                        height="0"
+                        width="0"
+                        style={{ display: 'none', visibility: 'hidden' }}
+                    />
+                </noscript>
+
                 <div className="decor-blob decor-blob--violet" style={{ top: '-10vh', left: '-10vw', width: '60vw', height: '60vh' }} />
                 <div className="decor-blob decor-blob--teal" style={{ bottom: '-8vh', right: '-10vw', width: '55vw', height: '55vh' }} />
 
