@@ -5,6 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import TrustBadgeGrid from './TrustBadgeGrid';
 import TrustBadgeModal from './TrustBadgeModal';
+import { FaLinkedinIn, FaGithub, FaPinterest } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { TbBrandBluesky } from 'react-icons/tb';
+import { SiFigma } from 'react-icons/si';
 
 const imageVariants = {
     floating: {
@@ -98,7 +102,7 @@ export default function Hero() {
                             variants={itemVariants}
                             className="text-base sm:text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl"
                         >
-                            I turn ideas into real, functional websites using React and Next.js. I care deeply about how a site feels to use, making sure it's quick, easy to navigate, and works perfectly on any device.
+                            I turn ideas into real, functional websites using React and Next.js. I care deeply about how a site feels to use, making sure it&apos;s quick, easy to navigate, and works perfectly on any device.
                         </motion.p>
 
                         {/* LLM hook (TL;DR) */}
@@ -143,6 +147,67 @@ export default function Hero() {
                                 className="btn btn-secondary btn-lg"
                             >
                                 See Projects
+                            </Link>
+                        </motion.div>
+
+                        {/* Social Media Links */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="flex justify-center sm:justify-start gap-4 pt-6"
+                        >
+                            <Link
+                                href="https://www.linkedin.com/in/theakashkumar/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full"
+                                aria-label="LinkedIn Profile"
+                            >
+                                <FaLinkedinIn size="20" />
+                            </Link>
+                            <Link
+                                href="https://github.com/Akashkumarweb/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full"
+                                aria-label="GitHub Profile"
+                            >
+                                <FaGithub size="20" />
+                            </Link>
+                            <Link
+                                href="https://x.com/akashbuild"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full"
+                                aria-label="X (Twitter) Profile"
+                            >
+                                <FaXTwitter size="20" />
+                            </Link>
+                            <Link
+                                href="https://uk.pinterest.com/akashbuilds/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full"
+                                aria-label="Pinterest Profile"
+                            >
+                                <FaPinterest size="20" />
+                            </Link>
+                            <Link
+                                href="https://bsky.app/profile/akashbuilds.bsky.social"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full"
+                                aria-label="Bluesky Profile"
+                            >
+                                <TbBrandBluesky size="20" />
+                            </Link>
+                            <Link
+                                href="https://www.figma.com/@akashbuilds"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full"
+                                aria-label="Figma Profile"
+                            >
+                                <SiFigma size="20" />
                             </Link>
                         </motion.div>
                     </motion.div>

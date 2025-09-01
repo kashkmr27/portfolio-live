@@ -58,8 +58,8 @@ export const metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        site: '@YourTwitterHandle',
-        creator: '@YourTwitterHandle',
+        site: '@akashbuild',
+        creator: '@akashbuild',
         title: "Akash Kumar | Frontend & Aspiring Product Engineer London | React & Next.js",
         description: "London-based React & Next.js frontend engineer. Explore projects, UI/UX case studies, and client testimonials.",
         images: ['https://akashbuilds.com/images/hero-image.png'],
@@ -118,7 +118,11 @@ export default function RootLayout({ children }) {
                             "url": "https://akashbuilds.com",
                             "sameAs": [
                                 "https://www.linkedin.com/in/theakashkumar",
-                                "https://github.com/akashkumarweb"
+                                "https://github.com/akashkumarweb",
+                                "https://x.com/akashbuild",
+                                "https://bsky.app/profile/akashbuilds.bsky.social",
+                                "https://uk.pinterest.com/akashbuilds/",
+                                "https://www.figma.com/@akashbuilds"
                             ],
                             "skills": [
                                 "React",
@@ -166,7 +170,11 @@ export default function RootLayout({ children }) {
                             "url": "https://akashbuilds.com",
                             "sameAs": [
                                 "https://www.linkedin.com/in/theakashkumar",
-                                "https://github.com/akashkumarweb"
+                                "https://github.com/akashkumarweb",
+                                "https://x.com/akashbuild",
+                                "https://bsky.app/profile/akashbuilds.bsky.social",
+                                "https://uk.pinterest.com/akashbuilds/",
+                                "https://www.figma.com/@akashbuilds"
                             ]
                         })
                     }}
@@ -197,7 +205,11 @@ export default function RootLayout({ children }) {
                             },
                             "sameAs": [
                                 "https://www.linkedin.com/in/theakashkumar",
-                                "https://github.com/akashkumarweb"
+                                "https://github.com/akashkumarweb",
+                                "https://x.com/akashbuild",
+                                "https://bsky.app/profile/akashbuilds.bsky.social",
+                                "https://uk.pinterest.com/akashbuilds/",
+                                "https://www.figma.com/@akashbuilds"
                             ]
                         })
                     }}

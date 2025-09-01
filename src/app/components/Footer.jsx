@@ -1,5 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaLinkedinIn, FaGithub, FaPinterest } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { TbBrandBluesky } from 'react-icons/tb';
+import { SiFigma } from 'react-icons/si';
 
 export default function Footer() {
     return (
@@ -79,6 +83,33 @@ export default function Footer() {
                                     </Link>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+                    {/* Social Media Links */}
+                    <div className="border-t border-white/10 mt-8 pt-8">
+                        <div className="flex flex-col items-center mb-6">
+                            <h3 className="text-white font-semibold mb-4">Connect With Me</h3>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <Link href="https://www.linkedin.com/in/theakashkumar/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaLinkedinIn size="20" />
+                                </Link>
+                                <Link href="https://github.com/Akashkumarweb/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaGithub size="20" />
+                                </Link>
+                                <Link href="https://x.com/akashbuild" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaXTwitter size="20" />
+                                </Link>
+                                <Link href="https://uk.pinterest.com/akashbuilds/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaPinterest size="20" />
+                                </Link>
+                                <Link href="https://bsky.app/profile/akashbuilds.bsky.social" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <TbBrandBluesky size="20" />
+                                </Link>
+                                <Link href="https://www.figma.com/@akashbuilds" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <SiFigma size="20" />
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
