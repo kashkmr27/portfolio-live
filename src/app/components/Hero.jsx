@@ -80,16 +80,16 @@ export default function Hero() {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="space-y-8 lg:space-y-10 px-4 pt-28 pb-12 lg:pt-32 lg:pb-32"
+                        className="space-y-8 lg:space-y-10 px-4 pt-28 pb-12 lg:pt-32 lg:pb-22"
                     >
                         {/* Overline, H1, Sub-headline */}
                         <motion.div variants={itemVariants} className="space-y-3">
-                            <p className="uppercase tracking-wide text-xs sm:text-sm text-white/60">Aspiring Product Engineer</p>
+                            {/* <p className="uppercase tracking-wide text-xs sm:text-sm text-white/60">Aspiring Product Engineer</p> */}
                             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                                <span className="text-white">Product Engineer · React & AI · London</span>
+                                Product focused Frontend Engineer
                             </h1>
                             <p className="text-lg sm:text-xl text-violet-200 leading-relaxed">
-                                I design, code and grow user-centric products.
+                                blending React, Next.js, and UI/UX
                             </p>
                         </motion.div>
 
@@ -98,16 +98,16 @@ export default function Hero() {
                             variants={itemVariants}
                             className="text-base sm:text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl"
                         >
-                            I help UK startups, agencies, and remote teams build modern, scalable digital solutions.
+                            I turn ideas into real, functional websites using React and Next.js. I care deeply about how a site feels to use, making sure it's quick, easy to navigate, and works perfectly on any device.
                         </motion.p>
 
                         {/* LLM hook (TL;DR) */}
-                        <motion.p
+                        {/* <motion.p
                             variants={itemVariants}
                             className="text-sm sm:text-base text-white/80 leading-relaxed max-w-3xl"
                         >
                             Akash Kumar is a Frontend & Aspiring Product Engineer in London who designs UX, ships React/Next.js, and integrates ChatGPT for real product outcomes.
-                        </motion.p>
+                        </motion.p> */}
 
                         {/* KPI chips (keep two) */}
                         <motion.div
@@ -115,12 +115,12 @@ export default function Hero() {
                             className="flex flex-wrap gap-3 sm:gap-4 pt-4"
                         >
                             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
-                                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-violet-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-xs sm:text-sm">↑41% activation</span>
+                                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"></div>
+                                <span className="text-white/90 font-medium text-xs sm:text-sm">AI Integration Expert</span>
                             </div>
                             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-2">
                                 <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full"></div>
-                                <span className="text-white/90 font-medium text-xs sm:text-sm">Lighthouse 99</span>
+                                <span className="text-white/90 font-medium text-xs sm:text-sm">Technical SEO</span>
                             </div>
                         </motion.div>
 
