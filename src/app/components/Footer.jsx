@@ -23,8 +23,8 @@ export default function Footer() {
                                 />
                             </Link>
                             <p className="text-white/70 max-w-md">
-                                Frontend developer specializing in React, Next.js, and AI-integrated web applications.
-                                Building modern, scalable solutions for startups and agencies.
+                                Frontend Developer & Aspiring Product Engineer <br />
+                                Building fast, modern web experiences with React, Next.js, and AI. Based in London, working with startups and agencies across the UK.
                             </p>
                             <div className="mt-4 flex flex-wrap gap-4 text-sm">
                                 <Link href="/services/react-development" className="text-white/80 hover:text-white underline underline-offset-4">

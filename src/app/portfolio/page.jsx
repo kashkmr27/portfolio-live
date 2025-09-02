@@ -61,21 +61,21 @@ export default function PortfolioPage() {
     const curatedProjects = [
         {
             title: 'EasyTripAI - AI Travel Planner',
-            summary: 'AI-powered travel planner for UK startups using React and Next.js. Personalized itineraries with OpenAI integration, reducing planning time by 90%.',
+            summary: 'EasyTripAI is a smart travel planning tool that creates personalised itineraries in just a few minutes. Built with React, Next.js and the OpenAI platform, it makes holiday planning fast and enjoyable, cutting down the time travellers spend searching across multiple sites.',
             tech: ['React', 'Next.js', 'OpenAI API', 'AI Integration'],
             imageSrc: '/images/case-studies/easytripai/travel-ai.webp',
             caseStudyLink: '/case-studies/easytripai'
         },
         {
             title: 'AI Integration for UK FinTech',
-            summary: 'AI-powered customer service chatbot for UK FinTech startup. Built with React and OpenAI GPT-4, boosting user retention by 30%.',
+            summary: 'A London fintech needed quicker answers for everyday questions. I built a chatbot in React that uses GPT 4 and plugs into their existing product. It now handles common queries in seconds so the support team can focus on the tricky stuff.',
             tech: ['React', 'TypeScript', 'OpenAI GPT-4', 'AI Chat'],
             imageSrc: '/images/case-studies/fintech-card/fintech-dashboard.png',
             caseStudyLink: '/case-studies/ai-integration'
         },
         {
             title: 'CryptoAnalysis – Real‑Time Crypto Tracker',
-            summary: 'Real-time markets, personalized watchlists, and interactive charts. Built with React, TypeScript, Firebase, CoinGecko API.',
+            summary: 'CryptoAnalysis is a live crypto dashboard with prices, watchlists and simple charts. I used React with TypeScript and Firebase for auth and storage, and pulled market data from the CoinGecko API. The goal was a clean UI with clear numbers and no clutter.',
             tech: ['React', 'TypeScript', 'Firebase', 'CoinGecko API'],
             imageSrc: '/images/case-studies/crypto-analysis/real-time-cryptocurrency-tracker-react-dashboard-homepage.png',
             caseStudyLink: '/case-studies/crypto-analysis'
@@ -94,14 +94,14 @@ export default function PortfolioPage() {
                         {/* Hero Content */}
                         <div className="text-center mb-16">
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                                Frontend & Aspiring Product Engineer Portfolio
+                                Akash Kumar, Frontend and Aspiring Product Engineer
                                 <br />
                                 <span className="text-gradient">React, Next.js & AI Projects in the UK</span>
                             </h1>
                             <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                                I help UK startups, agencies, and remote teams build modern, scalable digital solutions.
-                                With 5+ years of experience in React, Next.js, and AI integration, I deliver exceptional
-                                user experiences that drive real business results for London-based and UK-wide clients.
+                                I design and build web products with React, Next.js and AI for companies across the UK.
+                                I work with startups, agencies and remote teams, focusing on clean interfaces, quick load times and a smooth path from idea to release. I have five years of hands on experience and I care about the details that make people stay.
+                                My work helps companies across London and the wider UK grow with scalable technology that genuinely connects with their customers.
                             </p>
                         </div>
                     </div>

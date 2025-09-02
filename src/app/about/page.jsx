@@ -129,20 +129,21 @@ export default function AboutPage() {
 
                         {/* SEO-Driven Headline */}
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                            About Akash Kumar
+                            About Me
                             <br />
                             <span className="text-gradient">
-                                Frontend Developer UK – React, Next.js & AI Integration
+                                Frontend Developer in London | Specialising in React, Next.js & AI Integration
                             </span>
                         </h1>
 
                         {/* SEO-rich Summary */}
                         <p className="text-xl text-white/80 mb-0 leading-relaxed max-w-5xl mx-auto">
-                            Experienced London-based frontend developer specialising in React, Next.js, TypeScript, and custom AI solutions for UK startups, agencies, and remote teams.
-                            With a proven track record delivering high-performance web apps and seamless AI integrations, I help UK businesses grow through reliable, scalable technology.
+                            Hey there. I&apos;m a frontend developer crafting websites and apps for startups and agencies, right from the heart of London. My daily tools are React, Next.js, and TypeScript. I use them to build things that are quick, reliable, and actually pleasant to use.
+                            I also love adding AI into the mix. This means building features like friendly chatbots or a search bar that actually understands what you need.
+
                             <br className="hidden md:block" />
                             <span className="text-white/60">
-                                Looking for a freelance frontend developer in London, remote React developer, or AI integration specialist? You&apos;re in the right place.
+                                I specialise in helping UK startups, creative agencies, and remote teams build their online presence. If you are looking for a freelance frontend developer in London, a remote React.js developer, or need help with AI integration, lets talk.
                             </span>
                         </p>
                     </div>
@@ -157,20 +158,17 @@ export default function AboutPage() {
                         </h2>
                         <div className="prose prose-invert max-w-none">
                             <p className="text-lg text-white/80 mb-8 leading-relaxed">
-                                I started my journey in web development over 5 years ago, driven by a passion for
-                                creating beautiful, functional websites that solve real problems. Based in London,
-                                I&apos;ve worked with clients across the UK and internationally, delivering projects that
-                                exceed expectations.
+                                How I Got Here
                             </p>
                             <p className="text-lg text-white/80 mb-8 leading-relaxed">
-                                My approach combines technical expertise with a deep understanding of user experience.
-                                I believe that great code should be invisible to users—they should only see the
-                                seamless, intuitive interface that makes their lives easier.
+                                My career in web development started over five years ago. I&apos;ve always loved the puzzle of taking a complex problem and solving it with clean, simple code. For me, the best website is one that feels easy and obvious to use. The technology behind it should be invisible.
                             </p>
                             <p className="text-lg text-white/80 mb-8 leading-relaxed">
-                                When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to
-                                open-source projects, or sharing knowledge with the developer community. I&apos;m always
-                                learning and staying up-to-date with the latest frontend trends and best practices.
+                                I have started my career in Pune, India and then move to London.
+                                Working from London has given me the chance to partner with fantastic businesses, both here in the UK and across the world. I especially enjoy the energy and big ideas that come from working with startups.
+                            </p>
+                            <p className="text-lg text-white/80 mb-8 leading-relaxed">
+                                When I&apos;m not coding, you can find me with a coffee in hand, exploring a new tech tool, or getting maybe a little too excited about the latest ways to improve a website&apos;s Google ranking. I believe the best developers never stop learning, and I&apos;m always adding new skills to my toolkit.
                             </p>
                         </div>
                     </div>
@@ -179,39 +177,39 @@ export default function AboutPage() {
                 {/* Skills & Expertise */}
                 <section className="container mx-auto">
                     <div className="max-w-4xl mx-auto  px-4 py-24">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-                            Skills & Expertise
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">
+                            My Services (Skills & Expertise)
                         </h2>
+                        <p className='text-center mb-12'>My process focuses on building a strong foundation that works for your audience and your goals.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <div className="card p-8">
                                 <div className="text-3xl mb-4">⚛️</div>
                                 <h3 className="text-xl font-bold text-white mb-4">React & Next.js</h3>
                                 <p className="text-white/80">
-                                    Building modern, scalable applications with React and Next.js.
-                                    Focus on performance, SEO, and user experience.
+                                    I use React and Next.js to build strong, scalable web applications. I focus on speed, strong SEO, and a smooth user experience to keep visitors engaged.
+
                                 </p>
                             </div>
                             <div className="card p-8">
                                 <div className="text-3xl mb-4">🤖</div>
                                 <h3 className="text-xl font-bold text-white mb-4">AI Integration</h3>
                                 <p className="text-white/80">
-                                    Integrating AI capabilities with ChatGPT API, OpenAI, and custom solutions
-                                    to enhance user experience and automate processes.
+                                    I add smart features to websites using tools like the OpenAI API (ChatGPT API). This lets me create helpful elements like custom chatbots or automated systems that save you time and improve user interaction.
                                 </p>
                             </div>
                             <div className="card p-8">
                                 <div className="text-3xl mb-4">✨</div>
                                 <h3 className="text-xl font-bold text-white mb-4">Web Animation</h3>
                                 <p className="text-white/80">
-                                    Creating engaging animations and micro-interactions using Framer Motion
-                                    and modern CSS techniques.
+                                    I use Framer Motion and modern CSS to add engaging animations and micro interactions. This help you to get your site feel more dynamic and enjoyable to use without slowing it down.
+
                                 </p>
                             </div>
                             <div className="card p-8">
                                 <div className="text-3xl mb-4">📱</div>
                                 <h3 className="text-xl font-bold text-white mb-4">Responsive Design</h3>
                                 <p className="text-white/80">
-                                    Mobile-first approach ensuring perfect experience across all devices
+                                    Always use Mobile first approach ensuring perfect responsive design experience across all devices
                                     and screen sizes.
                                 </p>
                             </div>
@@ -219,7 +217,7 @@ export default function AboutPage() {
                                 <div className="text-3xl mb-4">⚡</div>
                                 <h3 className="text-xl font-bold text-white mb-4">Performance</h3>
                                 <p className="text-white/80">
-                                    Optimizing for speed, accessibility, and Core Web Vitals to ensure
+                                    Code that make sure optimizing for speed, accessibility, and Core Web Vitals to ensure
                                     the best possible user experience.
                                 </p>
                             </div>
@@ -227,7 +225,7 @@ export default function AboutPage() {
                                 <div className="text-3xl mb-4">🔒</div>
                                 <h3 className="text-xl font-bold text-white mb-4">Security</h3>
                                 <p className="text-white/80">
-                                    Implementing best practices for web security, GDPR compliance,
+                                    Adding best practices for web security, GDPR compliance,
                                     and data protection.
                                 </p>
                             </div>

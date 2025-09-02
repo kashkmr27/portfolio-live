@@ -124,7 +124,7 @@ export default function WhyTrustMe() {
                         variants={itemVariants}
                         className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
                     >
-                        Bento grid of credibility signals I bring to product teams.
+                        Create like a designer, builds like an engineer, and delivers like a product owner.
                     </motion.p>
                 </motion.div>
 
