@@ -114,6 +114,9 @@ export async function fetchFeaturedMedia(mediaId) {
         const originalUrl = media.source_url;
         const optimizedUrl = optimizeImageUrl(originalUrl, mediaId);
 
+        // Get the best available image sizes
+        const sizes = media.media_details?.sizes || {};
+
         return {
             id: media.id,
             url: optimizedUrl || originalUrl,
@@ -122,14 +125,23 @@ export async function fetchFeaturedMedia(mediaId) {
             caption: media.caption?.rendered || '',
             title: media.title?.rendered || '',
             description: media.description?.rendered || '',
-            sizes: media.media_details?.sizes || {},
+            sizes: sizes,
             width: media.media_details?.width || 0,
             height: media.media_details?.height || 0,
-            // Provide different size URLs for responsive images
-            thumbnail: optimizeImageUrl(media.media_details?.sizes?.thumbnail?.source_url || media.source_url, mediaId),
-            medium: optimizeImageUrl(media.media_details?.sizes?.medium?.source_url || media.source_url, mediaId),
-            large: optimizeImageUrl(media.media_details?.sizes?.large?.source_url || media.source_url, mediaId),
-            full: optimizeImageUrl(media.source_url, mediaId)
+            // Provide different size URLs for responsive images with fallbacks
+            thumbnail: sizes.thumbnail?.source_url || originalUrl,
+            medium: sizes.medium?.source_url || sizes.thumbnail?.source_url || originalUrl,
+            medium_large: sizes.medium_large?.source_url || sizes.medium?.source_url || originalUrl,
+            large: sizes.large?.source_url || sizes.medium_large?.source_url || originalUrl,
+            full: originalUrl,
+            // Add optimized versions
+            optimized: {
+                thumbnail: optimizeImageUrl(sizes.thumbnail?.source_url || originalUrl, mediaId),
+                medium: optimizeImageUrl(sizes.medium?.source_url || originalUrl, mediaId),
+                medium_large: optimizeImageUrl(sizes.medium_large?.source_url || originalUrl, mediaId),
+                large: optimizeImageUrl(sizes.large?.source_url || originalUrl, mediaId),
+                full: optimizedUrl || originalUrl
+            }
         };
     } catch (error) {
         console.error('Error fetching featured media:', error);

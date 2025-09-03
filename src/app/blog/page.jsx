@@ -58,7 +58,7 @@ export default async function BlogPage() {
 
     // Fetch author information and featured media for each post
     const postsWithData = await Promise.all(
-        blogPosts.map(async (post) => {
+        blogPosts.map(async (post, index) => {
             const [author, featuredMedia] = await Promise.all([
                 fetchAuthor(post.author),
                 post.featuredMedia ? fetchFeaturedMedia(post.featuredMedia) : null
@@ -197,18 +197,20 @@ export default async function BlogPage() {
                                 <Link
                                     key={post.slug}
                                     href={`/blog/${post.slug}`}
-                                    className="group bg-gradient-to-br from-slate-800/50 to-slate-900/70 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-slate-600/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl block"
+                                    className="group blog-card bg-gradient-to-br from-slate-800/50 to-slate-900/70 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-slate-600/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl block"
                                 >
                                     {/* Featured Image */}
-                                    <div className="relative h-56 lg:h-64 overflow-hidden">
+                                    <div className="relative aspect-video overflow-hidden">
                                         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 to-transparent z-10"></div>
                                         {post.featuredImage ? (
                                             <Image
-                                                src={post.featuredImageSizes?.medium?.source_url || post.featuredImage}
+                                                src={post.featuredImageSizes?.large?.source_url || post.featuredImageSizes?.medium_large?.source_url || post.featuredImageSizes?.medium?.source_url || post.featuredImage}
                                                 alt={post.featuredImageAlt}
                                                 fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500 blog-card-image"
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                quality={85}
+                                                priority={index < 3}
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
