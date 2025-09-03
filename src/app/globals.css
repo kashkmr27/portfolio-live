@@ -1011,6 +1011,38 @@ p {
 
 .blog-content li {
   margin-bottom: 0.65em;
+  position: relative;
+}
+
+/* Add small opacity dots for unordered lists */
+.blog-content ul li::before {
+  content: '•';
+  position: absolute;
+  left: -1.5em;
+  top: 0;
+  color: rgba(139, 92, 246, 0.6);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Reset counter for ordered lists */
+.blog-content ol {
+  counter-reset: list-counter;
+}
+
+/* Add small opacity dots for ordered lists */
+.blog-content ol li::before {
+  content: counter(list-counter, decimal) '.';
+  position: absolute;
+  left: -2em;
+  top: 0;
+  color: rgba(139, 92, 246, 0.6);
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.blog-content ol li {
+  counter-increment: list-counter;
 }
 
 /* Blockquote */

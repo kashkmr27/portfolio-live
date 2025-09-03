@@ -20,6 +20,25 @@ export async function generateMetadata({ params }) {
     // Clean excerpt for meta description
     const cleanExcerpt = post.excerpt.replace(/<[^>]*>/g, '').substring(0, 160);
 
+    // Fetch featured media for OG image
+    let ogImage = 'https://akashbuilds.com/images/hero-image.png'; // Default fallback
+
+    if (post.featuredMedia) {
+        try {
+            const featuredMedia = await fetchFeaturedMedia(post.featuredMedia);
+            if (featuredMedia && featuredMedia.url) {
+                ogImage = featuredMedia.url;
+            }
+        } catch (error) {
+            console.error('Error fetching featured media for OG image:', error);
+        }
+    }
+
+    // Ensure the image URL is absolute
+    if (!ogImage.startsWith('http')) {
+        ogImage = `https://akashbuilds.com${ogImage}`;
+    }
+
     return {
         title: `${post.title} - AI Integration Insights | Akash Kumar`,
         description: cleanExcerpt,
@@ -33,10 +52,11 @@ export async function generateMetadata({ params }) {
             siteName: "Akash Kumar - Frontend & Aspiring Product Engineer",
             images: [
                 {
-                    url: 'https://akashbuilds.com/og-image-blog.jpg',
+                    url: ogImage,
                     width: 1200,
                     height: 630,
                     alt: post.title,
+                    type: 'image/jpeg',
                 }
             ],
             locale: 'en_GB',
@@ -47,7 +67,9 @@ export async function generateMetadata({ params }) {
             card: 'summary_large_image',
             title: post.title,
             description: cleanExcerpt,
-            images: ['https://akashbuilds.com/og-image-blog.jpg'],
+            images: [ogImage],
+            creator: '@akashbuild',
+            site: '@akashbuild',
         },
         alternates: {
             canonical: `https://akashbuilds.com/blog/${slug}`

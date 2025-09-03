@@ -98,6 +98,24 @@ export default function RootLayout({ children }) {
                 <meta name="theme-color" content="#7c3aed" />
                 <meta name="msapplication-TileColor" content="#7c3aed" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+                {/* Additional Social Media Meta Tags */}
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:image:type" content="image/png" />
+                <meta property="og:image:alt" content="Akash Kumar's Portfolio - Frontend Developer London" />
+
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:image:alt" content="Akash Kumar's Portfolio - Frontend Developer London" />
+
+                {/* Additional SEO Meta Tags */}
+                <meta name="author" content="Akash Kumar" />
+                <meta name="keywords" content="frontend developer, react developer, next.js developer, london, uk, web development, ui/ux, portfolio" />
+                <meta name="robots" content="index, follow" />
+                <meta name="language" content="English" />
+                <meta name="revisit-after" content="7 days" />
+                <meta name="distribution" content="global" />
+                <meta name="rating" content="general" />
                 <meta name="p:domain_verify" content="30566e8fbedf65b5b02c3cd1abb09d03" />
 
                 {/* Person Schema: Front-End Engineer */}
