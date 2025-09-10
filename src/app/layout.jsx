@@ -13,8 +13,8 @@ export const metadata = {
             'en-GB': '/',
         },
     },
-    title: "Akash Kumar | Frontend Developer London | React ",
-    description: "Product-focused Frontend Engineer in London with expertise in React & Next.js. Discover projects, UI/UX case studies, client testimonials, and AI-driven solutions.",
+    title: "Frontend developer who builds with React and Next.js",
+    description: "Product-focused Frontend Engineer in London with expertise in React & Next.js. Discover projects, UI/UX case studies, testimonials, and AI-driven solutions.",
 
     authors: [{ name: "Akash Kumar" }],
     creator: "Akash Kumar",
