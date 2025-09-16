@@ -5,6 +5,8 @@ import Image from "next/image";
 import Header from "./Header/Header";
 import Footer from "./Footer";
 import FAQTemplateModal from "./FAQTemplateModal";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function BlogDetailClient({ post, author, featuredMedia, cleanedContent }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,6 +103,246 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                 preElement.appendChild(copyButton);
             }
         });
+    }, [cleanedContent]);
+
+    // Simple code block enhancement - just add headers and preserve formatting
+    useEffect(() => {
+        const enhanceCodeBlocks = () => {
+            console.log('Starting code block enhancement...');
+
+            // Find all code elements
+            const allCodeElements = document.querySelectorAll('.blog-content pre, .blog-content code');
+            console.log('Found code elements:', allCodeElements.length);
+
+            allCodeElements.forEach((element, index) => {
+                console.log(`Element ${index}:`, {
+                    tagName: element.tagName,
+                    textContent: element.textContent?.substring(0, 100),
+                    innerHTML: element.innerHTML?.substring(0, 100)
+                });
+            });
+
+            // Process pre blocks first
+            const preBlocks = document.querySelectorAll('.blog-content pre:not([data-enhanced])');
+            console.log('Processing', preBlocks.length, 'pre blocks');
+
+            preBlocks.forEach((pre, index) => {
+                console.log(`Processing pre block ${index}`);
+
+                // Ensure proper styling
+                pre.style.cssText = `
+                    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+                    color: #e2e8f0;
+                    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+                    margin: 2rem 0;
+                    border-radius: 0.75rem;
+                    font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    overflow-x: hidden;
+                    max-width: 100%;
+                    border: 1px solid #475569;
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+                    position: relative;
+                `;
+
+                // Add header if not already present
+                if (!pre.querySelector('.code-header')) {
+                    const header = document.createElement('div');
+                    header.className = 'code-header';
+                    header.style.cssText = `
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 2.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 1rem;
+                        background: linear-gradient(90deg, rgba(15,23,42,0.95), rgba(30,41,59,0.95));
+                        border-bottom: 1px solid rgba(71, 85, 105, 0.6);
+                        border-top-left-radius: 0.75rem;
+                        border-top-right-radius: 0.75rem;
+                    `;
+
+                    // Add dots
+                    const dots = document.createElement('div');
+                    dots.style.cssText = 'display: flex; gap: 0.5rem;';
+                    ['#ef4444', '#f59e0b', '#10b981'].forEach(color => {
+                        const dot = document.createElement('span');
+                        dot.style.cssText = `
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            background: ${color};
+                            box-shadow: 0 1px 2px rgba(0,0,0,0.35);
+                        `;
+                        dots.appendChild(dot);
+                    });
+
+                    // Add copy button
+                    const copyBtn = document.createElement('button');
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.style.cssText = `
+                        background: rgba(51, 65, 85, 0.8);
+                        color: #cbd5e1;
+                        border: 1px solid #475569;
+                        padding: 0.25rem 0.75rem;
+                        border-radius: 0.375rem;
+                        font-size: 0.75rem;
+                        cursor: pointer;
+                        font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+                    `;
+
+                    copyBtn.onclick = async () => {
+                        try {
+                            const codeContent = pre.textContent || '';
+                            await navigator.clipboard.writeText(codeContent);
+                            copyBtn.textContent = 'Copied!';
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copy';
+                            }, 2000);
+                        } catch (err) {
+                            copyBtn.textContent = 'Failed';
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copy';
+                            }, 2000);
+                        }
+                    };
+
+                    header.appendChild(dots);
+                    header.appendChild(copyBtn);
+                    pre.appendChild(header);
+                }
+
+                pre.dataset.enhanced = 'true';
+                console.log(`Enhanced pre block ${index}`);
+            });
+
+            // Process long inline code blocks
+            const inlineCodeBlocks = document.querySelectorAll('.blog-content code:not(pre code):not([data-enhanced])');
+            console.log('Processing', inlineCodeBlocks.length, 'inline code blocks');
+
+            inlineCodeBlocks.forEach((code, index) => {
+                const content = code.textContent || '';
+                console.log(`Inline code ${index}: length=${content.length}, content="${content.substring(0, 50)}..."`);
+
+                // Convert long code to code blocks
+                if (content.length > 80 && (
+                    /\b(function|const|let|var|import|export|useEffect|useState)\b/.test(content) ||
+                    /[;{}]/.test(content) ||
+                    /=>/.test(content)
+                )) {
+                    console.log(`Converting long inline code ${index} to code block`);
+
+                    const newPre = document.createElement('pre');
+                    newPre.textContent = content;
+                    newPre.style.cssText = `
+                        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+                        color: #e2e8f0;
+                        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+                        margin: 2rem 0;
+                        border-radius: 0.75rem;
+                        font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+                        font-size: 14px;
+                        line-height: 1.5;
+                        white-space: pre-wrap;
+                        word-wrap: break-word;
+                        overflow-x: hidden;
+                        max-width: 100%;
+                        border: 1px solid #475569;
+                        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+                        position: relative;
+                    `;
+
+                    // Add header (same as above)
+                    const header = document.createElement('div');
+                    header.className = 'code-header';
+                    header.style.cssText = `
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 2.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 1rem;
+                        background: linear-gradient(90deg, rgba(15,23,42,0.95), rgba(30,41,59,0.95));
+                        border-bottom: 1px solid rgba(71, 85, 105, 0.6);
+                        border-top-left-radius: 0.75rem;
+                        border-top-right-radius: 0.75rem;
+                    `;
+
+                    const dots = document.createElement('div');
+                    dots.style.cssText = 'display: flex; gap: 0.5rem;';
+                    ['#ef4444', '#f59e0b', '#10b981'].forEach(color => {
+                        const dot = document.createElement('span');
+                        dot.style.cssText = `
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            background: ${color};
+                            box-shadow: 0 1px 2px rgba(0,0,0,0.35);
+                        `;
+                        dots.appendChild(dot);
+                    });
+
+                    const copyBtn = document.createElement('button');
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.style.cssText = `
+                        background: rgba(51, 65, 85, 0.8);
+                        color: #cbd5e1;
+                        border: 1px solid #475569;
+                        padding: 0.25rem 0.75rem;
+                        border-radius: 0.375rem;
+                        font-size: 0.75rem;
+                        cursor: pointer;
+                        font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+                    `;
+
+                    copyBtn.onclick = async () => {
+                        try {
+                            await navigator.clipboard.writeText(content);
+                            copyBtn.textContent = 'Copied!';
+                            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                        } catch (err) {
+                            copyBtn.textContent = 'Failed';
+                            setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                        }
+                    };
+
+                    header.appendChild(dots);
+                    header.appendChild(copyBtn);
+                    newPre.appendChild(header);
+
+                    code.parentNode.replaceChild(newPre, code);
+                    newPre.dataset.enhanced = 'true';
+                } else {
+                    // Style short inline code
+                    code.style.cssText = `
+                        background: linear-gradient(135deg, #334155 0%, #475569 100%);
+                        color: #fbbf24;
+                        padding: 0.25em 0.5em;
+                        border-radius: 0.375em;
+                        font-size: 0.875em;
+                        border: 1px solid #64748b;
+                        font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+                        white-space: pre-wrap;
+                    `;
+                    code.dataset.enhanced = 'true';
+                }
+            });
+        };
+
+        // Run multiple times to catch all content
+        setTimeout(enhanceCodeBlocks, 100);
+        setTimeout(enhanceCodeBlocks, 500);
+        setTimeout(enhanceCodeBlocks, 1000);
+
     }, [cleanedContent]);
 
     // Generate schema markup
@@ -229,7 +471,7 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
             />
             <Header />
-            <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900">
+            <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-violet-900 blog-detail-container">
                 {/* Breadcrumbs */}
                 <nav className="container mx-auto px-4 py-6 lg:py-8">
                     <div className="max-w-7xl mx-auto">
@@ -426,7 +668,12 @@ export default function BlogDetailClient({ post, author, featuredMedia, cleanedC
                         {/* Article Content */}
                         <div className="max-w-5xl mx-auto">
                             <article className="blog-content prose prose-invert prose-lg max-w-none">
-                                <div dangerouslySetInnerHTML={{ __html: cleanedContent }} />
+                                <div
+                                    dangerouslySetInnerHTML={{ __html: cleanedContent }}
+                                    style={{
+                                        whiteSpace: 'preserve' /* Preserve whitespace from WordPress */
+                                    }}
+                                />
                             </article>
 
                             {/* Author Bio Box */}

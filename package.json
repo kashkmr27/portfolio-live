@@ -11,10 +11,12 @@
   "dependencies": {
     "framer-motion": "^11.0.0",
     "next": "14.2.5",
+    "prettier": "3.6.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.0",
-    "react-intersection-observer": "^9.16.0"
+    "react-intersection-observer": "^9.16.0",
+    "react-syntax-highlighter": "^15.6.6"
   },
   "devDependencies": {
     "@next/third-parties": "^14.2.5",
