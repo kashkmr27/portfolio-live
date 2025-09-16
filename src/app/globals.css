@@ -13,16 +13,60 @@ body {
   box-sizing: border-box;
 }
 
+/* Blog Detail Tablet Header Spacing */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .blog-detail-container {
+    padding-top: 100px;
+    /* Space for fixed header on tablet */
+  }
+
+  .blog-detail-container h1 {
+    margin-top: 1.5rem;
+    /* Spacing for h1 on tablet */
+  }
+
+  /* Ensure breadcrumbs are visible on tablet */
+  .blog-detail-container nav {
+    padding-top: 0.5rem;
+  }
+}
+
 /* Blog Detail Mobile Header Spacing */
 @media (max-width: 768px) {
   .blog-detail-container {
-    padding-top: 80px;
-    /* Add space for fixed header on mobile */
+    padding-top: 90px;
+    /* Reduced space for mobile - was too much */
   }
 
   .blog-detail-container h1 {
     margin-top: 1rem;
-    /* Additional spacing for h1 */
+    /* Reduced spacing for h1 on mobile */
+  }
+
+  /* Ensure breadcrumbs are visible */
+  .blog-detail-container nav {
+    padding-top: 0.5rem;
+    /* Reduced padding */
+  }
+
+  /* Add extra spacing for the main content area */
+  .blog-detail-container .container {
+    padding-top: 1rem;
+    /* Reduced padding */
+  }
+
+  /* Additional mobile spacing for better readability */
+  .blog-detail-container .max-w-7xl {
+    padding-top: 0.5rem;
+    /* Reduced padding */
+  }
+
+  /* Ensure proper spacing for breadcrumbs on mobile */
+  .blog-detail-container ol {
+    margin-top: 0.5rem;
+    /* Reduced margin */
+    padding-top: 0.25rem;
+    /* Reduced padding */
   }
 }
 
