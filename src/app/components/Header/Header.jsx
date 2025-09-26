@@ -3,25 +3,21 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 import { useRouter, usePathname } from 'next/navigation';
-import { NAV_LINKS, SERVICES_DROPDOWN, TOOLS_DROPDOWN } from "../../constants";
+import { NAV_LINKS, SERVICES_DROPDOWN } from "../../constants";
 
-const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesOpen, setToolsOpen, toolsOpen }) => {
+const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesOpen }) => {
     const servicesRef = useRef(null);
-    const toolsRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (servicesRef.current && !servicesRef.current.contains(event.target)) {
                 setServicesOpen(false);
             }
-            if (toolsRef.current && !toolsRef.current.contains(event.target)) {
-                setToolsOpen(false);
-            }
         };
 
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [setServicesOpen, setToolsOpen]);
+    }, [setServicesOpen]);
 
     return (
         <nav className="nav">
@@ -90,51 +86,6 @@ const AnimatedNavLinks = ({ handleNavClick, pathname, setServicesOpen, servicesO
                     )}
                 </li>
 
-                {/* Tools Dropdown */}
-                <li
-                    className="relative"
-                    ref={toolsRef}
-                    onMouseEnter={() => setToolsOpen(true)}
-                    onMouseLeave={() => setToolsOpen(false)}
-                >
-                    <Link
-                        href="/tools"
-                        className={`nav__link flex items-center gap-1 ${pathname.startsWith('/tools') ? 'nav__link--active' : ''}`}
-                        onClick={e => handleNavClick(e, '/tools')}
-                    >
-                        Tools
-                        <svg
-                            className={`w-4 h-4 transition-transform duration-200 ${toolsOpen ? 'rotate-180' : ''}`}
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </Link>
-
-                    {/* Dropdown Menu */}
-                    {toolsOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-64 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-lg shadow-xl z-50 backdrop-blur-sm">
-                            <div className="p-2">
-                                {TOOLS_DROPDOWN.map((tool) => (
-                                    <Link
-                                        key={tool.href}
-                                        href={tool.href}
-                                        className="flex items-center p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200 group"
-                                        onClick={() => setToolsOpen(false)}
-                                    >
-
-                                        <div>
-                                            <div className="text-white font-medium group-hover:text-violet-300 transition-colors">{tool.title}</div>
-                                            <div className="text-slate-400 text-sm">{tool.description}</div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-                </li>
             </ul>
         </nav>
     );
@@ -144,9 +95,7 @@ const Header = () => {
     const [active, setActive] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
-    const [toolsOpen, setToolsOpen] = useState(false);
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-    const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
 
@@ -162,7 +111,6 @@ const Header = () => {
         }
         setActive(false);
         setMobileServicesOpen(false);
-        setMobileToolsOpen(false);
     };
 
     return (
@@ -186,8 +134,6 @@ const Header = () => {
                         pathname={pathname}
                         setServicesOpen={setServicesOpen}
                         servicesOpen={servicesOpen}
-                        setToolsOpen={setToolsOpen}
-                        toolsOpen={toolsOpen}
                     />
 
                     {/* CTA Button */}
@@ -301,45 +247,6 @@ const Header = () => {
                                     </div>
                                 </li>
 
-                                {/* Mobile Tools Dropdown */}
-                                <li>
-                                    <div className="space-y-3">
-                                        <button
-                                            onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
-                                            className="flex items-center justify-between w-full text-lg font-medium text-white hover:text-violet-400 transition-colors"
-                                        >
-                                            Tools
-                                            <svg
-                                                className={`w-4 h-4 transition-transform duration-200 ${mobileToolsOpen ? 'rotate-180' : ''}`}
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                            </svg>
-                                        </button>
-                                        {mobileToolsOpen && (
-                                            <div className="space-y-2 pl-4 border-l border-white/20">
-                                                {TOOLS_DROPDOWN.map((tool) => (
-                                                    <Link
-                                                        key={tool.href}
-                                                        href={tool.href}
-                                                        className="flex items-center py-2 text-white/80 hover:text-white transition-colors"
-                                                        onClick={() => {
-                                                            setActive(false);
-                                                            setMobileToolsOpen(false);
-                                                        }}
-                                                    >
-                                                        <div>
-                                                            <div className="font-medium">{tool.title}</div>
-                                                            <div className="text-sm text-white/60">{tool.description}</div>
-                                                        </div>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                </li>
                             </ul>
                         </nav>
 
