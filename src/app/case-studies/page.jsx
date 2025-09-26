@@ -18,6 +18,16 @@ export const metadata = {
 
 const CASE_STUDIES = [
     {
+        slug: 'astp-website-redesign',
+        title: 'ASTP Website Redesign — Clearer UX & Technical SEO',
+        client: 'ASTP (Association of Science and Technology Professionals)',
+        summary: 'Redesigned ASTP website with clearer membership UX, MODX CMS build, and technical SEO optimization. Result: traffic +39%, engagement +25%, conversions +8%.',
+        image: '/images/case-studies/astp/astp-homepage-hero-before-after-2025.jpg',
+        keyMetric: 'Traffic +39%, engagement +25%, conversions +8%',
+        technologies: ['MODX CMS', 'UI/UX Design', 'Technical SEO', 'Figma', 'Analytics'],
+        category: 'Website Redesign'
+    },
+    {
         slug: 'easytripai',
         title: 'EasyTripAI.com – AI Trip Planner',
         client: 'Travel Tech Startup',
