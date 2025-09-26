@@ -132,7 +132,7 @@ export default function ASTPWebsiteRedesignCaseStudy() {
                       <li className="flex items-start gap-4">
                         <span>
                           <strong>It was Hard to scan content.</strong> Membership benefits were buried in long paragraphs, lines and blocky layouts —
-                          people weren't finding the info they needed.
+                          people weren&apos;t finding the info they needed.
                         </span>
                       </li>
                       <li className="flex items-start gap-4">
@@ -143,7 +143,7 @@ export default function ASTPWebsiteRedesignCaseStudy() {
                       </li>
                       <li className="flex items-start gap-4">
                         <span>
-                          <strong>Technical issues.</strong> Page load, image handling and metadata meant the site wasn't getting the
+                          <strong>Technical issues.</strong> Page load, image handling and metadata meant the site wasn&apos;t getting the
                           search visibility it could.
                         </span>
                       </li>
