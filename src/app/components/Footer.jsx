@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer className="border-t border-white/10" style={{ background: 'var(--gradient-footer)' }}>
             <div className="container">
-                <div className="py-12">
+                <div className="pt-12 pb-6">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {/* Logo and Description */}
                         <div className="col-span-1 md:col-span-2">
@@ -26,12 +26,24 @@ export default function Footer() {
                                 Frontend Developer & Aspiring Product Engineer <br />
                                 Building fast, modern web experiences with React, Next.js, and AI. Based in London, working with startups and agencies across the UK.
                             </p>
-                            <div className="mt-4 flex flex-wrap gap-4 text-sm">
-                                <Link href="/services/react-development" className="text-white/80 hover:text-white underline underline-offset-4">
-                                    Hire a Front-End & Aspiring Product Engineer
+                            <div className="flex flex-wrap gap-4">
+                                <Link href="https://www.linkedin.com/in/theakashkumar/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaLinkedinIn size="20" />
                                 </Link>
-                                <Link href="/services" className="text-white/80 hover:text-white underline underline-offset-4">
-                                    MVP Developer UK
+                                <Link href="https://github.com/Akashkumarweb/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaGithub size="20" />
+                                </Link>
+                                <Link href="https://x.com/akashbuild" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaXTwitter size="20" />
+                                </Link>
+                                <Link href="https://uk.pinterest.com/akashbuilds/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <FaPinterest size="20" />
+                                </Link>
+                                <Link href="https://bsky.app/profile/akashbuilds.bsky.social" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <TbBrandBluesky size="20" />
+                                </Link>
+                                <Link href="https://www.figma.com/@akashbuilds" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violet-400 transition-colors p-2 hover:bg-white/5 rounded-full">
+                                    <SiFigma size="20" />
                                 </Link>
                             </div>
                         </div>
@@ -87,7 +99,7 @@ export default function Footer() {
                     </div>
 
                     {/* Social Media Links */}
-                    <div className="border-t border-white/10 mt-8 pt-8">
+                    {/* <div className="border-t border-white/10 mt-8 pt-8">
                         <div className="flex flex-col items-center mb-6">
                             <h3 className="text-white font-semibold mb-4">Connect With Me</h3>
                             <div className="flex flex-wrap justify-center gap-4">
@@ -111,7 +123,7 @@ export default function Footer() {
                                 </Link>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Bottom Bar */}
                     <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
@@ -128,9 +140,9 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="mt-4 text-center text-white/60 text-xs">
+                    {/* <div className="mt-4 text-center text-white/60 text-xs">
                         Built with React/Next.js · Deployed on Vercel
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

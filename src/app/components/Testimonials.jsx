@@ -13,6 +13,13 @@ export default function Testimonials() {
             rating: 5
         },
         {
+            name: "Apurva Choudhary",
+            role: "Lead Product Designer",
+            image: "/images/testimonial/apurva.jpeg",
+            content: "He is quick at understanding the work requirement and easily convert design into a structured code. He has excel in HTML, CSS, WordPress and Salesforce Design. He is multifaceted individual who is inclined towards learning new opportunities and delivering business solutions timely.",
+            rating: 5
+        },
+        {
             name: "Vince Stevenson",
             role: "Director, Edutech",
             image: "/images/testimonial/Vince-Stevenson.jpeg",
@@ -23,7 +30,14 @@ export default function Testimonials() {
             name: "Prashant Sutar",
             role: "Founder, Crawlmagic",
             image: "/images/testimonial/prashant-sutar.webp",
-            content: "Akash&apos;s technical skills and communication are top-notch. He transformed our vision into a beautiful, functional web application. The best freelance frontend developer we&apos;ve worked with.",
+            content: "Akash technical skills and communication are top-notch. He transformed our vision into a beautiful, functional web application. The best freelance frontend developer we&apos;ve worked with.",
+            rating: 5
+        },
+        {
+            name: "Kunal Rajan",
+            role: "Startup Founder and HR",
+            image: "/images/testimonial/kunal.jpeg",
+            content: "Akash was hired in the product team of Screen Magic and very quickly he became a key member of the team. His commitment to the time line along with the quality of deliverables was impeccable . Akash is a go-getter and really collaborates with the teams well.",
             rating: 5
         }
     ];
@@ -68,9 +82,10 @@ export default function Testimonials() {
                 <div className="text-center mb-12 lg:mb-16">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-2">What Clients & Colleagues Say</h2>
                     <div className="text-white/80 text-sm">
-                        <span className="align-middle">Average Rating</span>
+                        <p className="align-middle">Recommendations from colleagues and mentors I&apos;ve worked with</p>
+                        {/* <span className="align-middle">Average Rating</span>
                         <span className="mx-2 text-yellow-300 font-semibold">{avgRating}/5</span>
-                        <span className="align-middle">({testimonials.length} reviews)</span>
+                        <span className="align-middle">({testimonials.length} reviews)</span> */}
                     </div>
                 </div>
 

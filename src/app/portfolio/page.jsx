@@ -14,7 +14,7 @@ const Project = ({
         <article className="card overflow-hidden hover:shadow-xl transition-all duration-300">
             <div className="aspect-video overflow-hidden rounded-t-xl">
                 <Image
-                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                    className="object-cover rounded-t-xl"
                     src={imageSrc}
                     alt={`${title} - React Next.js project by UK frontend developer`}
                     width={400}
@@ -24,7 +24,7 @@ const Project = ({
                 />
             </div>
 
-            <div className="p-6">
+            <div className="pt-4 px-1">
                 <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-4 line-clamp-2">
                     {summary}
@@ -94,11 +94,9 @@ export default function PortfolioPage() {
                         {/* Hero Content */}
                         <div className="text-center mb-16">
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-                                Akash Kumar, Frontend and Aspiring Product Engineer
-                                <br />
-                                <span className="text-gradient">React, Next.js & AI Projects in the UK</span>
+                                My Projects
                             </h1>
-                            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                            <p className="text-xl text-white/80 max-w-7xl mx-auto leading-relaxed">
                                 I design and build web products with React, Next.js and AI for companies across the UK.
                                 I work with startups, agencies and remote teams, focusing on clean interfaces, quick load times and a smooth path from idea to release. I have five years of hands on experience and I care about the details that make people stay.
                                 My work helps companies across London and the wider UK grow with scalable technology that genuinely connects with their customers.
@@ -108,7 +106,7 @@ export default function PortfolioPage() {
                 </section>
 
                 {/* Portfolio Grid */}
-                <section className="container mx-auto px-4 py-24">
+                <section className="container-wide px-4">
                     <div className="max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {curatedProjects.map((project, index) => (

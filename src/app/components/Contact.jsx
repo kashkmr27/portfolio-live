@@ -20,7 +20,7 @@ const primaryContactMethods = [
     {
         id: 2,
         name: 'LinkedIn',
-        value: '@Theakashkumar',
+        value: '@theakashkumar',
         link: 'https://www.linkedin.com/in/theakashkumar/',
         icon: <FaLinkedinIn size="24" className="text-violet-400" />,
         description: 'Connect with me professionally',
@@ -29,7 +29,7 @@ const primaryContactMethods = [
     {
         id: 3,
         name: 'GitHub',
-        value: '@Akashkumarweb',
+        value: '@akashkumarweb',
         link: 'https://github.com/Akashkumarweb/',
         icon: <FaGithub size="24" className="text-violet-400" />,
         description: 'View my open source projects',
@@ -80,19 +80,19 @@ const Contact = () => {
 
     // Anti-spam: Split email into parts and use JavaScript to reconstruct
     // This makes it harder for scrapers to find the email
-    const emailParts = ['contact', 'akashbuilds', 'com'];
-    const domain = 'akashbuilds.com';
+    // const emailParts = ['contact', 'akashbuilds', 'com'];
+    // const domain = 'akashbuilds.com';
 
-    const revealEmail = () => {
-        setEmailRevealed(true);
-    };
+    // const revealEmail = () => {
+    //     setEmailRevealed(true);
+    // };
 
-    const constructEmail = () => {
-        // Additional anti-spam: Use template literals and dynamic construction
-        const atSymbol = String.fromCharCode(64); // @ symbol
-        const dotSymbol = String.fromCharCode(46); // . symbol
-        return `${emailParts[0]}${atSymbol}${emailParts[1]}${dotSymbol}${emailParts[2]}`;
-    };
+    // const constructEmail = () => {
+    //     // Additional anti-spam: Use template literals and dynamic construction
+    //     const atSymbol = String.fromCharCode(64); // @ symbol
+    //     const dotSymbol = String.fromCharCode(46); // . symbol
+    //     return `${emailParts[0]}${atSymbol}${emailParts[1]}${dotSymbol}${emailParts[2]}`;
+    // };
 
     return (
         <div className="dark" id='contact'>
@@ -137,7 +137,7 @@ const Contact = () => {
                                             {method.icon}
                                         </div>
                                         <h3 className="text-white text-lg font-semibold mb-2">{method.name}</h3>
-                                        {method.name === 'Email' && !emailRevealed ? (
+                                        {/* {method.name === 'Email' && !emailRevealed ? (
                                             <button
                                                 onClick={(e) => {
                                                     e.preventDefault();
@@ -149,7 +149,8 @@ const Contact = () => {
                                             </button>
                                         ) : (
                                             <p className="text-violet-400 text-sm mb-2">{constructEmail()}</p>
-                                        )}
+                                        )} */}
+                                        <p className="text-violet-400 text-sm mb-2">{method.value}</p>
                                         <p className="text-white/70 text-sm">{method.description}</p>
                                     </div>
                                 </motion.a>
@@ -200,7 +201,7 @@ const Contact = () => {
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                     <a
-                                        href={`mailto:${constructEmail()}`}
+                                        href={`mailto:method.value`}
                                         className="btn btn-primary btn-lg"
                                     >
                                         Send Message

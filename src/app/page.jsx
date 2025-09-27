@@ -66,16 +66,17 @@ export default function Home() {
                     __html: JSON.stringify(homepageFaqSchema)
                 }}
             />
-            
+
             <Header />
             <main>
                 <Hero />
+                <FeaturedProjects />
                 <WhyTrustMe />
                 <ProductGuarantees />
                 <WhatIDo />
                 <SkillsTechnologies />
                 <Testimonials />
-                <FeaturedProjects />
+
                 <FAQ />
                 <Contact />
             </main>

@@ -151,7 +151,7 @@ export default function Hero() {
                         </motion.div>
 
                         {/* Social Media Links */}
-                        <motion.div
+                        {/* <motion.div
                             variants={itemVariants}
                             className="flex justify-center sm:justify-start gap-4 pt-6"
                         >
@@ -209,7 +209,7 @@ export default function Hero() {
                             >
                                 <SiFigma size="20" />
                             </Link>
-                        </motion.div>
+                        </motion.div> */}
                     </motion.div>
 
                     {/* Image Column */}

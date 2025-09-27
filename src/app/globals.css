@@ -417,7 +417,7 @@ p {
 /* ===== CARD SYSTEM ===== */
 .card {
   border-radius: var(--radius-xl);
-  padding: var(--space-6);
+  padding: var(--space-2);
   border: 1px solid rgba(124, 58, 237, 0.22);
   background: linear-gradient(180deg, var(--surface-1), var(--surface-0));
   backdrop-filter: blur(16px);
@@ -772,9 +772,9 @@ p {
 }
 
 /* ===== Global decorative surface ===== */
-.global-surface {
+/* .global-surface {
   position: relative;
-}
+} */
 
 .decor-blob {
   position: absolute;
@@ -792,7 +792,7 @@ p {
   background: radial-gradient(520px 360px at 88% 12%, rgba(20, 184, 166, 0.18), transparent 60%);
 }
 
-.global-surface::before {
+/* .global-surface::before {
   content: '';
   position: fixed;
   inset: -20vh 0 auto 0;
@@ -812,7 +812,7 @@ p {
   filter: blur(60px);
   opacity: 0.4;
   z-index: -1;
-}
+} */
 
 .wrapper--full {
   min-height: 100vh;

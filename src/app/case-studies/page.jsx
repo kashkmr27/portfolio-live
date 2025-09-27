@@ -20,8 +20,8 @@ const CASE_STUDIES = [
     {
         slug: 'astp-website-redesign',
         title: 'ASTP Website Redesign — Clearer UX & Technical SEO',
-        client: 'ASTP (Association of Science and Technology Professionals)',
-        summary: 'Redesigned ASTP website with clearer membership UX, MODX CMS build, and technical SEO optimization. Result: traffic +39%, engagement +25%, conversions +8%.',
+        client: 'ASTP knowledge transfer',
+        summary: 'Redesigned and develop ASTP website with clearer membership UX, CMS build, and technical SEO optimization. Result: traffic +39%, engagement +25%, conversions +8%.',
         image: '/images/case-studies/astp/astp-homepage-hero-before-after-2025.jpg',
         keyMetric: 'Traffic +39%, engagement +25%, conversions +8%',
         technologies: ['MODX CMS', 'UI/UX Design', 'Technical SEO', 'Figma', 'Analytics'],
@@ -75,7 +75,7 @@ const CaseStudyCard = ({ caseStudy, index }) => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
             </div>
-            <div className="p-6">
+            <div className="p-1">
                 <div className="flex items-center gap-2 mb-3">
                     <span className="px-3 py-1 bg-violet-600/20 text-violet-300 text-xs font-semibold rounded-full">
                         {caseStudy.category}

@@ -29,12 +29,18 @@ const itemVariants = {
 
 const featuredProjects = [
     {
+        title: "ASTP4KT",
+        description: "Redesigned and develop ASTP website with clearer membership UX, CMS build, and technical SEO optimization. Result: traffic +39%, engagement +25%, conversions +8%.",
+        image: "/images/case-studies/astp/astp-homepage-hero-before-after-2025.jpg",
+        tags: ["Frontend", "Figma", "Lead design team", "technical SEO"],
+        projectLink: "/case-studies/astp-website-redesign",
+    },
+    {
         title: "EasyTripAI",
         description: "AI-powered travel planner web app using Next.js and ChatGPT API for UK-based startup. Reduced planning time from 15 minutes to 30 seconds with personalized itineraries.",
         image: "/images/case-studies/easytripai/travel-ai.webp",
         tags: ["Next.js", "ChatGPT API", "AI Integration", "UK Startup"],
         projectLink: "/case-studies/easytripai",
-        caseStudyLink: "/case-studies/easytripai"
     },
     {
         title: "CryptoAnalysis",
@@ -42,7 +48,6 @@ const featuredProjects = [
         image: "/images/case-studies/crypto-analysis/real-time-cryptocurrency-tracker-react-dashboard-homepage.png",
         tags: ["React", "TypeScript", "Firebase", "CoinGecko API"],
         projectLink: "/case-studies/crypto-analysis",
-        caseStudyLink: "/case-studies/crypto-analysis"
     }
 ];
 
@@ -61,13 +66,13 @@ export default function FeaturedProjects() {
                         variants={itemVariants}
                         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6"
                     >
-                        Featured Projects
+                        Projects
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
                         className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
                     >
-                        Showcasing impactful projects that highlight my expertise as a frontend developer UK and AI integration specialist.
+                        Showcasing impactful projects that highlight my expertise as a frontend engineer and AI integration specialist.
                     </motion.p>
                 </motion.div>
 
@@ -76,7 +81,7 @@ export default function FeaturedProjects() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8"
                 >
                     {featuredProjects.map((project, index) => (
                         <motion.div
@@ -90,13 +95,13 @@ export default function FeaturedProjects() {
                                     src={project.image}
                                     alt={project.title}
                                     fill
-                                    className="object-cover transition-transform duration-300 hover:scale-105"
+                                    className="object-cover rounded-t-xl"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div> */}
                             </div>
 
                             {/* Project Content */}
-                            <div className="p-6 lg:p-8">
+                            <div className="pt-4 px-1">
                                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 lg:mb-4">{project.title}</h3>
                                 <p className="text-white/80 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">{project.description}</p>
 
@@ -119,12 +124,6 @@ export default function FeaturedProjects() {
                                         className="btn btn-primary flex-1 text-center"
                                     >
                                         View Project
-                                    </Link>
-                                    <Link
-                                        href={project.caseStudyLink}
-                                        className="btn btn-secondary flex-1 text-center"
-                                    >
-                                        Read Case Study
                                     </Link>
                                 </div>
                             </div>
