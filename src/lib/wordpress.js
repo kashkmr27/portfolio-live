@@ -1,4 +1,4 @@
-const WORDPRESS_API_URL = 'https://darkcyan-pony-605661.hostingersite.com/wp-json/wp/v2';
+const WORDPRESS_API_URL = 'https://blog.akashbuilds.com/wp-json/wp/v2';
 
 function optimizeImageUrl(originalUrl, imageId) {
     if (!originalUrl) return null;
@@ -22,7 +22,7 @@ function processContentImages(content) {
     processedContent = processedContent.replace(
         /<img([^>]*?)src="([^"]*?)"([^>]*?)>/gi,
         (match, before, src, after) => {
-            if (src.includes('darkcyan-pony-605661.hostingersite.com')) {
+            if (src.includes('blog.akashbuilds.com')) {
                 const imageId = src.match(/\/(\d+)\//)?.[1] || 'unknown';
                 const optimizedSrc = optimizeImageUrl(src, imageId);
                 return `<img${before}src="${optimizedSrc}"${after}>`;

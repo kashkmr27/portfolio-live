@@ -17,7 +17,7 @@ export default function NewsletterSubscription() {
         setMessage("");
         try {
             const res = await fetch(
-                "https://darkcyan-pony-605661.hostingersite.com/wp-json/custom/v1/newsletter",
+                "https://blog.akashbuilds.com/wp-json/custom/v1/newsletter",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },

@@ -20,7 +20,7 @@ export default function FAQTemplateModal({ isOpen, onClose }) {
         try {
             // First, send email to API
             const apiResponse = await fetch(
-                "https://darkcyan-pony-605661.hostingersite.com/wp-json/custom/v1/faqtemplate",
+                "https://blog.akashbuilds.com/wp-json/custom/v1/faqtemplate",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -38,8 +38,8 @@ export default function FAQTemplateModal({ isOpen, onClose }) {
 
                 // Download the file
                 const fileUrl = fileType === "csv"
-                    ? "https://darkcyan-pony-605661.hostingersite.com/wp-content/uploads/2025/08/chatbot-faq-template.csv"
-                    : "https://darkcyan-pony-605661.hostingersite.com/wp-content/uploads/2025/08/chatbot-faq-template.xlsx";
+                    ? "https://blog.akashbuilds.com/wp-content/uploads/2025/08/chatbot-faq-template.csv"
+                    : "https://blog.akashbuilds.com/wp-content/uploads/2025/08/chatbot-faq-template.xlsx";
 
                 const link = document.createElement('a');
                 link.href = fileUrl;

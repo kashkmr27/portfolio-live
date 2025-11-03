@@ -10,7 +10,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'darkcyan-pony-605661.hostingersite.com',
+                hostname: 'blog.akashbuilds.com',
                 port: '',
                 pathname: '/**',
             },
